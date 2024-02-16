@@ -1,7 +1,11 @@
 import { useState } from "react";
 import '../styles/CustomMealPage.css' 
+import axios from "axios";
 
-function CustomMealPage(props) {
+
+const API_URL = "http://localhost:5005/new-meals";
+
+function CustomMealPage() {
 
 
   const [mealName, setMealName] = useState("");
@@ -13,13 +17,12 @@ function CustomMealPage(props) {
       event.preventDefault()
       const newMeal = {mealName, mealCalories, mealDescription, mealImage};
 
-      props.setNewMeal([newMeal, ...props.meal])
-      setMealName("")
-      setMealCalories("")
-      setMealDescription ("")
-      setMealImage("")
-    
-
+      axios
+      .post(`${API_URL}`, newMeal)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
   };
 
     return(
