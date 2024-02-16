@@ -60,4 +60,5 @@
     display: flex;
     flex-direction: column;
     gap: 20px; /* Spaces out individual meal entries */
+
 }

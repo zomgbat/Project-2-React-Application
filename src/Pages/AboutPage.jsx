@@ -3,7 +3,7 @@ import '../styles/AboutPage.css'
 function AboutPage() {
   return (
     <div className="about-container">
-      <h2> About Us </h2>
+      
       <div className='creators'>
         <p class="about-paragraph">
 
@@ -58,7 +58,8 @@ function AboutPage() {
         <br></br>
 
         
-          <img className="developer3-image" src="../src/images/logo.jpg" alt="Photo of Kumar" />
+          <img className="developer3-image" src="../src/images/logo.jpg" alt="Photo of Kumar"  />
+
 
 
 
