@@ -37,7 +37,7 @@ function AboutPage() {
 
 
         
-          <img className="developer1-image" src="../src/images/logo.jpg" alt="Photo of Gavin" className="developer1-image" />
+          <img className="developer1-image" src="../src/images/logo.jpg" alt="Photo of Gavin"  />
 
 
 
@@ -47,7 +47,7 @@ function AboutPage() {
         <br></br>
 
         
-          <img className="developer2-image" src="../src/images/logo.jpg" alt="Photo of Barbara" className="developer2-image" />
+          <img className="developer2-image" src="../src/images/logo.jpg" alt="Photo of Barbara"  />
 
 
 
@@ -58,7 +58,7 @@ function AboutPage() {
         <br></br>
 
         
-          <img className="developer3-image" src="../src/images/logo.jpg" alt="Photo of Kumar" className="developer3-image" />
+          <img className="developer3-image" src="../src/images/logo.jpg" alt="Photo of Kumar" />
 
 
 
