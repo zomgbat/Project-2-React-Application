@@ -1,8 +1,15 @@
+import '../styles/DashboardPage.css'
+import { useNavigate } from 'react-router-dom';
+
+
 function DashboardPage() {
+
+    const navigate = useNavigate()
+
     return (
         <>
-          <h1>Dash</h1>
-         </>
+            <input onChange={(e) => navigate(`/day/:${e.target.value}`)} type="date" />
+        </>
 
     )
 }
