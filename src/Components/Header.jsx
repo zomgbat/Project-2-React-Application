@@ -2,14 +2,19 @@ import './Header.css'
 import { Link } from "react-router-dom";
 
 
-function Header() {
+
+function Header(props) {
+
+
 
     return (
-        <div>
-        <h3>   App. Name   </h3>
-        <Link to="/user"> Your Profile! </Link>
-        <img className="logo" src="src\assets\logo.jpg" alt="Fish Photo" />
-        </div>
+
+        <header>
+            <u className="propsTitle"> {props.title}</u>
+            <img className="logo" src="src\images\logo.jpg" alt="Fish Photo" />
+            <Link className="profileLink" to="/user"> Your Profile </Link>
+
+        </header>
     )
 }
 export default Header;
