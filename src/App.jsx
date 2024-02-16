@@ -6,6 +6,7 @@ import AboutPage from './Pages/AboutPage'
 import DayCardPage from './Pages/DayCardPage'
 import CustomMealPage from './Pages/CustomMealPage'
 import UserPage from './Pages/UserPage'
+import Footer from './Components/Footer'
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/custom-meal' element={<CustomMealPage />} />
         <Route path='/user' element={<UserPage />} />
       </Routes>
+      <Footer />
     </>
   )
 }
