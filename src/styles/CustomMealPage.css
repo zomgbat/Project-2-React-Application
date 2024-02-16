@@ -1,0 +1,44 @@
+.addArea,
+.addArea label,
+.addArea span,
+.addNewButton {
+    border: 1px solid rgb(74, 14, 14); /* Add border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 10px; /* Add padding for spacing */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    
+}
+
+.addArea {
+    display: flex;
+    color: rgb(74, 14, 14);
+    gap: 30px;
+    
+}
+
+.addArea span {
+    display: flex;
+    color: rgb(74, 14, 14);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    gap: 20px;
+}
+
+.addNewButton {
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 153, 6);
+    color: black;
+    font-weight: 800;
+    cursor: pointer;
+}
+.form-container {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 40px;
+    
+    
+}

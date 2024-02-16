@@ -16,6 +16,8 @@ header {
     border-radius: 200px; /* Adds rounded corners to the image */
     margin: auto; /* Centers the image horizontally in the flex container */
     display: block; /* Ensures the margin auto is effective */
+    filter: brightness(120%); /* Increase brightness for a vibrant appearance */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
 
 .profileLink {
