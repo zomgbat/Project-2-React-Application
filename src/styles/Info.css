@@ -1,0 +1,40 @@
+/* Container to hold your items
+
+
+Will need to add MEDIA QUERIES LATER*/
+
+
+
+.container {
+    max-width: 750px; /* Maximum width */
+    margin: 0 auto; /* Centering the container */
+    padding: 20px; /* Add some padding inside the container */
+    display: flex; /* Using flexbox to arrange child elements */
+    flex-wrap: wrap; /* Allow items to wrap if not enough space */
+    justify-content: space-between; /* Space out items */
+  }
+  
+  .infoButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .infoButton:hover {
+    background-color: #0056b3; /* A slightly darker blue */
+  }
+  
+  .infoImage {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below images */
+  }
+  

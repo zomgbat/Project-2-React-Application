@@ -1,15 +1,27 @@
 .userInfo{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 700px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
     color: #6f8b72;
-    text-decoration: none;
+    gap: 10px;
+}
+
+label{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
     font-size: 20px;
-    background-color: transparent;
+}
+
+h2 {
+    display: flex;
+    justify-content:center;
+    color: #6f8b72;
+    font-size: 30px;
     padding: 20px;
 }
 
-h1 {
-    color: #6f8b72;
-    text-decoration: none;
-    font-size: 30px;
-    background-color: transparent;
-    padding: 20px;
-}
