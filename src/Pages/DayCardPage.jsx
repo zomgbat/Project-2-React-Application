@@ -40,6 +40,7 @@ event.preventDefault()
 
     return (
         <>
+
             <h1>Day Card Page</h1>
             <p className="todayMeat">Today you ate:</p>
             {
@@ -76,7 +77,11 @@ event.preventDefault()
                 <input type="text" value={id} />
                 <button className='btn' type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
-        </>
+
+         <Header title="Day Card Page" />
+          <h1>Day Card Page</h1>
+         </>
+
 
     )
 }
