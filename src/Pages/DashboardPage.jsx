@@ -7,9 +7,9 @@ function DashboardPage() {
     const navigate = useNavigate()
 
     return (
-        <>
-            <input onChange={(e) => navigate(`/day/:${e.target.value}`)} type="date" />
-        </>
+        <div >
+            <input className='calendar' onChange={(e) => navigate(`/day/:${e.target.value}`)} type="date" />
+        </div>
 
     )
 }

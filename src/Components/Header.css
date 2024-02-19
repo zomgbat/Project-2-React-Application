@@ -1,27 +1,31 @@
 
 header {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 20px; /* Adjust padding to make the header thinner */
-    width: 100%;
-    height: 75px;
-    background-color: rgb(7, 134, 5);
-    font-size: 40px;
+    background-color: #6f8b72;
+    padding: 20px;
   }
 
 .logo {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 200px; /* Adds rounded corners to the image */
-    margin: auto; /* Centers the image horizontally in the flex container */
-    display: block; /* Ensures the margin auto is effective */
+    color: rgb(245, 237, 232);
+    text-decoration: none;
+    font-size: 40px;
+    background-color: transparent;
+    width: 100px;
 }
 
-.profileLink {
-    color: black;
+.user {
+    color: rgb(245, 237, 232);
+    text-decoration: none;
+    font-size: 40px;
+    background-color: transparent;
 }
 
-.propsTitle {
-    color: black;
+.title {
+    color: rgb(245, 237, 232);
+    text-decoration: none;
+    font-size: 40px;
+    background-color: transparent;
 }
