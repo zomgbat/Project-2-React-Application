@@ -27,13 +27,16 @@ function App() {
         setTitleApp("Today's calories count");
         break; */
       case '/about':
-        setTitle("About us");
+        setTitle("About US");
         break;
       case '/custom-meal':
-        setTitle("Your new meals");
+        setTitle("Custom meals");
         break;
       case '/user':
-        setTitle("your profile");
+        setTitle("User info");
+        break;
+        case '/info':
+          setTitle("Instructions");
         break;
     }
   }, [location.pathname]);
