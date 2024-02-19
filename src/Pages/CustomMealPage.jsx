@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import '../styles/CustomMealPage.css' 
+import '../styles/CustomMealPage.css'
 import axios from "axios";
 
 
@@ -13,10 +13,6 @@ function CustomMealPage() {
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
-
-
-
-
 
   const [meals, setMeals] = useState([]);
   const getAllMeals = () => {
@@ -32,11 +28,11 @@ function CustomMealPage() {
   useEffect(() => {
     getAllMeals();
   }, []);
-  
-  
+
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    const newMeal = { name,  calories: Number(calories), description, img };
+    const newMeal = { name, calories: Number(calories), description, img };
 
     axios
       .post(`${API_URL}`, newMeal)
@@ -55,44 +51,40 @@ function CustomMealPage() {
 
   return (
     <>
-      <h1>Custom Meal Creator!</h1>
-      <div className="form-container">
-        <form className='addArea' onSubmit={handleSubmit}>
-          <span>Add a Meal</span>
-          <div>
+      <div >
+        <form className="form-container" onSubmit={handleSubmit}>
+          <span className="titleMeal">Add a Meal</span>
 
-            <label >
-              Meal Name
-              <input value={name} onChange={(event) => { setName(event.target.value) }} id="setName" type="text" />
-            </label>
+          <label >
+            Meal Name
+            <input value={name} onChange={(event) => { setName(event.target.value) }} id="setName" type="text" />
+          </label>
 
-            <label>
-              Calories
-              <input value={calories} onChange={(event) => { setCalories(event.target.value) }} id="setCalories" type="number" />
-            </label>
+          <label>
+            Calories
+            <input value={calories} onChange={(event) => { setCalories(event.target.value) }} id="setCalories" type="number" />
+          </label>
 
-            <label>
-              Recipe Image
-              <input value={img} onChange={(event) => { setImg(event.target.value) }} id="setImg" type="url" />
-            </label>
+          <label>
+            Recipe Image
+            <input value={img} onChange={(event) => { setImg(event.target.value) }} id="setImg" type="url" />
+          </label>
 
-            <label>
-              Servings
-              <input value={description} onChange={(event) => { setDescription(event.target.value) }} id="setDescription" type="text" />
-            </label>
+          <label>
+            Servings
+            <input value={description} onChange={(event) => { setDescription(event.target.value) }} id="setDescription" type="text" />
+          </label>
+
+          <div className="moveBtn">
+            <button className='addNewButton' type="submit">Add Meal Now!</button>
           </div>
-
-          <button className='addNewButton' type="submit">Add Meal Now!</button>
-
 
         </form>
 
         {meals.map((meal) => {
           return (
             <div className="all-meals-section" key={meal.id} >
-              
-                <h3>{meal.name}</h3>
-              
+              <h3>{meal.name}</h3>
             </div>
           );
         })}
@@ -103,8 +95,8 @@ function CustomMealPage() {
 };
 
 
-    
-  
+
+
 
 
 export default CustomMealPage;
