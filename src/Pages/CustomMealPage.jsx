@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../styles/CustomMealPage.css' 
 import axios from "axios";
 
