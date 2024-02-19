@@ -1,13 +1,5 @@
 # Meal Tracker App
 
-This application is the Web Dev Jan-Mar 2024's react project. It is an app used to track meals over several days. The user can add meals from a database, add one-off meal information with a form, or add meals they eat frequently to the database directly, for ease of use.
-
-Our plan is to build the most basic form of the app, then expand on it if we have time
-
-
- Project Structure
-===================
-
 | Pages | Route | Description | Links |
 | --- | --- | --- | --- |
 | Dashboard Page | / | App home page. Contains:
