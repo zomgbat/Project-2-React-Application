@@ -78,6 +78,7 @@ event.preventDefault()
                 <button className='btn' type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
 
+
          <Header title="Day Card Page" />
           <h1>Day Card Page</h1>
          </>
