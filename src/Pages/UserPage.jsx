@@ -17,7 +17,7 @@ function UserPage() {
 
     return (
         <>
-            <h1> User Name </h1>
+            <h2> User Name </h2>
             <div className="userInfo">
                 <label>Name: </label>
                 <p> {user.name}</p>

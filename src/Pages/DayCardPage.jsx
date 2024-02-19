@@ -21,7 +21,7 @@ event.preventDefault()
 
     const addNew = (meal) => { 
         setAddMeal([...addMeal, meal]) 
-        setId(id+1)
+        setId(id+1) // Do we need this here?
     };
 
     const getAllMeals = () => {
@@ -52,10 +52,14 @@ event.preventDefault()
             <p className="searchMeat">Search here your meal:</p>
             <input className="searchBar"type="text" 
             onChange={(event) => {
-                const filterArray = meals.filter((meal) => {
-                    return meal.name.includes(event.target.value)
-                })
-                setNewMeals(filterArray);
+                if (event.target.value.length === 0) {
+                    setNewMeals([]);
+                } else {
+                    const filterArray = meals.filter((meal) => {
+                        return meal.name.includes(event.target.value)
+                    })
+                    setNewMeals(filterArray);
+                }
             }}
             />
 
@@ -74,17 +78,10 @@ event.preventDefault()
                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 <label>Img:</label>
                 <input type="text" value={img} onChange={(e) => setImg(e.target.value)}/>
-                <label>Id:</label>
-                <input type="text" value={id} />
+                <button type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
                 <button className='btn' type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
-
-
-         <Header title="Day Card Page" />
-          <h1>Day Card Page</h1>
          </>
-
-
     )
 }
 
