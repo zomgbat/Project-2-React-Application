@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import '../styles/UserPage.css'
 
 function UserPage() {
 
@@ -17,7 +18,7 @@ function UserPage() {
     return (
         <>
             <h1> User Name </h1>
-            <div>
+            <div className="userInfo">
                 <label>Name: </label>
                 <p> {user.name}</p>
                 <label>Surname: </label>

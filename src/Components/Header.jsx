@@ -10,6 +10,7 @@ function Header(props) {
         <header>
             <Link className="user" to="/user"> User </Link>
             <u className="title"> {props.title}</u>
+
            
 
 
