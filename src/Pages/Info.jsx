@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
 import '../styles/Info.css';
 
 
 function InfoPage() {
     return (
         <div className="infoPageContainer">
-            <h1>How to use... </h1>
+            <h2>How to use </h2>
             <p>
-
             This app. provides an easy way to <b> monitor your calories consumed per day, and the types of foods you have been eating (i.e fruit and veg.). </b>
 
                 <br></br>
@@ -23,7 +21,7 @@ function InfoPage() {
                 <br></br>
                 <br></br>
             </p>
-            <img className="infoImage" src="../src/images/info.jpg" alt="Info Sheet" />
+            <img className="infoImage" src="../src/images/info.png" alt="Info Sheet" />
         </div>
     );
 }
