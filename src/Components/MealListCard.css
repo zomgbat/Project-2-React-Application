@@ -1,0 +1,23 @@
+#meal-card {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    font-size: 12px;
+}
+
+#meal-card img {
+    width: 60%;
+    height: 60%;
+}
+
+#meal-card button {
+    border-radius: 15px;
+}
+
+#meal-card #card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+}
