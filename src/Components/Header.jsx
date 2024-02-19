@@ -8,9 +8,9 @@ function Header(props) {
     return (
 
         <header>
-            <Link className="profileLink" to="/user"> Your Profile </Link>
-            <u className="propsTitle"> {props.title}</u>
-            <img className="logo" src="src\images\logo.jpg" alt="Fish Photo" />
+            <Link className="user" to="/user"> User </Link>
+            <u className="title"> {props.title}</u>
+            <img className="logo" src="https://e7.pngegg.com/pngimages/696/110/png-clipart-logo-brand-line-art-doodles-miscellaneous-angle.png" alt="" />
 
         </header>
     )

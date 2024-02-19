@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header from "../Components/Header";
+
 
 function DayCardPage() {
     const [meals, setMeals] = useState('');
@@ -19,7 +21,7 @@ event.preventDefault()
 
     const addNew = (meal) => { 
         setAddMeal([...addMeal, meal]) 
-        setId(id+1)
+        setId(id+1) // Do we need this here?
     };
 
     const getAllMeals = () => {
@@ -39,6 +41,7 @@ event.preventDefault()
 
     return (
         <>
+
             <h1>Day Card Page</h1>
             <p>Today you ate:</p>
             {
@@ -49,10 +52,14 @@ event.preventDefault()
             <p>Search here your meal:</p>
             <input type="text" 
             onChange={(event) => {
-                const filterArray = meals.filter((meal) => {
-                    return meal.name.includes(event.target.value)
-                })
-                setNewMeals(filterArray);
+                if (event.target.value.length === 0) {
+                    setNewMeals([]);
+                } else {
+                    const filterArray = meals.filter((meal) => {
+                        return meal.name.includes(event.target.value)
+                    })
+                    setNewMeals(filterArray);
+                }
             }}
             />
 
@@ -71,11 +78,14 @@ event.preventDefault()
                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 <label>Img:</label>
                 <input type="text" value={img} onChange={(e) => setImg(e.target.value)}/>
-                <label>Id:</label>
-                <input type="text" value={id} />
                 <button type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
-        </>
+  
+
+         <Header title="Day Card Page" />
+          <h1>Day Card Page</h1>
+         </>
+
 
     )
 }
