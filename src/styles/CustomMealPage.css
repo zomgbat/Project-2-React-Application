@@ -1,64 +1,59 @@
-.addArea,
-.addArea label,
-.addArea span,
-.addNewButton {
-    border: 1px solid rgb(74, 14, 14); /* Add border */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    padding: 10px; /* Add padding for spacing */
+.form-container {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-    width: 80%;
-    
-}
-
-.addArea {
-    display: flex;
-    color: rgb(74, 14, 14);
-    gap: 30px;
-    
-}
-
-.addArea span {
-    display: flex;
-    color: rgb(74, 14, 14);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+    max-width: 700px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    color: #6f8b72;
     gap: 20px;
 }
 
-.addNewButton {
+label{
     display: flex;
-    color: rgb(255, 255, 255);
-    background-color: rgb(15, 153, 6);
-    color: black;
-    font-weight: 800;
-    cursor: pointer;
-}
-.form-container {
-    margin: 20px auto;
-    max-width: 700px;
-    padding: 40px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
-    border-radius: 8px; /* Smoothens corners */
-    
-    
+    justify-content: space-between;
 }
 
+.titleMeal {
+    display: flex;
+    justify-content: center;
+    color: #6f8b72;
+    font-size: 31px;
+    background-color: transparent;
+    margin: 20px 0px;
+}
 
 .all-meals-section {
-
-    margin-top: 40px; /* Adds space between the form and this section */
     padding: 20px;
-    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 80%;
     max-width: 700px; /* Matches the form container width */
-    margin: 40px auto; /* Centers the container and adds vertical space */
+    margin: 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Spaces out individual meal entries */
+    color: #6f8b72;
+}
 
+.moveBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.addNewButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(245, 237, 232);
+    background-color: #6f8b72;
+    opacity: 60%;
+    font-weight: 800;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px 0px;
+    width: 200px;
 }

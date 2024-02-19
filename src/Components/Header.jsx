@@ -14,9 +14,9 @@ function Header(props) {
            
 
 
-            <Link to="/about" className="logo">
-  <img src="src/assets/logotomato.png" alt="Tomato Photo" />
-  </Link>
+            <Link to="/about" >
+                <img className="logo" src="src/assets/logotomato.png" alt="Tomato Photo" />
+            </Link>
 
         </header>
     )

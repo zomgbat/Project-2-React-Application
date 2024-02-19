@@ -10,7 +10,7 @@ import Footer from './Components/Footer'
 import Header from './Components/Header'
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-
+import Info from './Pages/Info'
 
 
 function App() {
@@ -49,6 +49,7 @@ function App() {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/custom-meal' element={<CustomMealPage />} />
         <Route path='/user' element={<UserPage />} />
+        <Route path='/info' element={<Info />} />
       </Routes>
       <Footer />
     </>

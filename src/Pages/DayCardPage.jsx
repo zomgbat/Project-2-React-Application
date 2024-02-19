@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import '../styles/DayCardPage.css'
+import Header from "../Components/Header";
 
 function DayCardPage() {
     const [meals, setMeals] = useState('');
