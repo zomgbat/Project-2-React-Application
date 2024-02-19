@@ -10,12 +10,18 @@
     gap: 10px;
 }
 
-h1 {
+label{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h2 {
+    display: flex;
+    justify-content:center;
     color: #6f8b72;
     font-size: 30px;
-    background-color: transparent;
     padding: 20px;
 }
 

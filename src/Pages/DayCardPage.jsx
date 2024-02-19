@@ -42,7 +42,7 @@ event.preventDefault()
     return (
         <>
 
-            <h1>Day Card Page</h1>
+            <h2>Day Card Page</h2>
             <p className="todayMeat">Today you ate:</p>
             {
                 addMeal.map((meal) => {
@@ -70,6 +70,7 @@ event.preventDefault()
             }
 
             <form className='form' onSubmit={handleSubmit}>
+                <h5> Create custom meal</h5>
                 <label>Name:</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 <label>Calories:</label>
@@ -78,7 +79,6 @@ event.preventDefault()
                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 <label>Img:</label>
                 <input type="text" value={img} onChange={(e) => setImg(e.target.value)}/>
-                <button type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
                 <button className='btn' type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
          </>
