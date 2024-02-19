@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header from "../Components/Header";
+
 
 function DayCardPage() {
     const [meals, setMeals] = useState('');
@@ -39,6 +41,7 @@ event.preventDefault()
 
     return (
         <>
+
             <h1>Day Card Page</h1>
             <p>Today you ate:</p>
             {
@@ -76,6 +79,11 @@ event.preventDefault()
                 <button type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
         </>
+
+         <Header title="Day Card Page" />
+          <h1>Day Card Page</h1>
+         </>
+
 
     )
 }

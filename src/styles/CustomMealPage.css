@@ -36,9 +36,29 @@
     cursor: pointer;
 }
 .form-container {
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 700px;
     padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+    border-radius: 8px; /* Smoothens corners */
     
     
+}
+
+
+.all-meals-section {
+
+    margin-top: 40px; /* Adds space between the form and this section */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px; /* Matches the form container width */
+    margin: 40px auto; /* Centers the container and adds vertical space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spaces out individual meal entries */
+
 }
