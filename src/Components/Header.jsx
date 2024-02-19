@@ -10,8 +10,7 @@ function Header(props) {
         <header>
             <Link className="user" to="/user"> User </Link>
             <u className="title"> {props.title}</u>
-            <img className="logo" src="https://e7.pngegg.com/pngimages/696/110/png-clipart-logo-brand-line-art-doodles-miscellaneous-angle.png" alt="" />
-
+            <img className="logo" src="src/assets/logotomato.png" alt="" />
         </header>
     )
 }

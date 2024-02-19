@@ -1,0 +1,52 @@
+.todayMeat{
+    color: #6f8b72;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.searchMeat{
+    color: #6f8b72;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 0px 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: space-between;
+    color: #6f8b72;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    color: #6f8b72;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 10px;
+    margin: 20px;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    color: rgb(245, 237, 232);
+    font-size: 20px;
+    background-color: #6f8b72;
+    opacity: 60%;
+    padding: 10px;
+    margin: 20px 0px; 
+}
