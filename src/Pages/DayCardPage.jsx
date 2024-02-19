@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../Components/Header";
-
+import '../styles/DayCardPage.css'
 
 function DayCardPage() {
     const [meals, setMeals] = useState('');
@@ -43,14 +42,14 @@ event.preventDefault()
         <>
 
             <h1>Day Card Page</h1>
-            <p>Today you ate:</p>
+            <p className="todayMeat">Today you ate:</p>
             {
                 addMeal.map((meal) => {
                     return <img width={"80px"} src={meal.img} />
                 })
             }
-            <p>Search here your meal:</p>
-            <input type="text" 
+            <p className="searchMeat">Search here your meal:</p>
+            <input className="searchBar"type="text" 
             onChange={(event) => {
                 if (event.target.value.length === 0) {
                     setNewMeals([]);
@@ -69,7 +68,7 @@ event.preventDefault()
                 })
             }
 
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <label>Name:</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 <label>Calories:</label>
@@ -79,14 +78,9 @@ event.preventDefault()
                 <label>Img:</label>
                 <input type="text" value={img} onChange={(e) => setImg(e.target.value)}/>
                 <button type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
+                <button className='btn' type='submit' onClick={() => { addNew({name, calories, description, img})}}> Add custom meal</button>
             </form>
-  
-
-         <Header title="Day Card Page" />
-          <h1>Day Card Page</h1>
          </>
-
-
     )
 }
 

@@ -32,16 +32,23 @@ function CustomMealPage() {
   useEffect(() => {
     getAllMeals();
   }, []);
-
-
+  
+  
   const handleSubmit = (event) => {
     event.preventDefault()
-    const newMeal = { name, calories, description, img };
+    const newMeal = { name,  calories: Number(calories), description, img };
 
     axios
       .post(`${API_URL}`, newMeal)
       .then((response) => {
         console.log(response);
+        // Reset the form fields using the state setter functions
+        setName("");
+        setCalories(""); // Reset to an empty string to match the initial state
+        setDescription("");
+        setImg("");
+        getAllMeals();
+
       })
       .catch((error) => console.log(error));
   };
