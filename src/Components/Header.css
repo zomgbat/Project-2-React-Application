@@ -27,3 +27,17 @@ header {
     font-size: 30px;
     background-color: transparent;
 }
+
+.user img{
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+}
+
+.user:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #bc1001; 
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 3px;
+}

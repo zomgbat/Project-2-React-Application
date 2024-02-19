@@ -8,7 +8,8 @@
     overflow-y: scroll;
     height: 80vh;
     color: #6f8b72;
-    padding: 20px;
+    padding: 0px 50px;
+    gap: 30px;
   }
   
   .infoButton {
