@@ -19,7 +19,9 @@ function DayCardPage() {
     event.preventDefault();
   };
 
-  const deleteMeal = (deleteIndex) => {
+  const deleteMeal = (deleteIndex, calories) => {
+    const updateCalories = dayCalories-calories;
+    setDayCalories(updateCalories);
     const filterArray = dayMeals.filter((meal, index) => {
       return deleteIndex != index;
     });
