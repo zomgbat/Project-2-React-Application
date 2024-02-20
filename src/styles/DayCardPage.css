@@ -71,3 +71,8 @@ h5{
 .searchImg{
     width: 40px;
 }
+
+.completeCard{
+      overflow-y: scroll;
+      height: 80vh;
+}

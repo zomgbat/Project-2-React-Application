@@ -8,6 +8,8 @@
     border-radius: 8px; 
     color: #6f8b72;
     gap: 10px;
+    overflow-y: scroll;
+    height: 70vh;
 }
 
 label{
@@ -23,5 +25,23 @@ h2 {
     color: #6f8b72;
     font-size: 30px;
     padding: 20px;
+}
+
+.calButton{
+    color: rgb(245, 237, 232);
+    background-color: #6f8b72;
+    text-decoration: none;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 1.5px;
+}
+
+.calButton:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #bc1001; 
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 3px;
 }
 

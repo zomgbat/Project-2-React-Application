@@ -30,8 +30,6 @@ function UserPage() {
     })
 
 
-
-
     return (
         <>
             <h2> User Name </h2>
@@ -57,7 +55,7 @@ function UserPage() {
              >
 
             </input>
-            <button onClick={() => handleSubmit(calorieValue)}>Submit</button>
+            <button className= 'calButton' onClick={() => handleSubmit(calorieValue)}> Set Cal</button>
                 </label>
             </div>
         </>
