@@ -5,8 +5,12 @@ function ProgressBar() {
   const [dayCalories, setDayCalories] = useState(0);
   const [calorieProgress, setCalorieProgress] = useState(0);
 
-  const calorieTarget = 2000;
 
+
+  const calorieTarget = 2000; // Kumar: this value needs to be replaced with the user's targetCalories value from the database
+
+
+  
   const updateProgressBar = (cal) => {
     setCalorieProgress((cal / calorieTarget) * 100);
   };

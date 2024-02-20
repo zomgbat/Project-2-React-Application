@@ -6,14 +6,14 @@ import MealListCard from "../Components/MealListCard.jsx";
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
-  const [dayMeals, setDayMeals] = useState([]); // Day meals array
+  const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
 
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
-  const [dayCalories, setDayCalories] = useState(0);
+  const [dayCalories, setDayCalories]=useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,8 +28,8 @@ function DayCardPage() {
 
   const addNew = (meal) => {
     setDayMeals([...dayMeals, meal]);
-    setId(id + 1); // Do we need this here?
-    const updateCalories = dayCalories + meal.calories;
+    setId(id + 1); // Kumar - Do we need this here?
+    const updateCalories = dayCalories+meal.calories;
     setDayCalories(updateCalories)
   };
 
