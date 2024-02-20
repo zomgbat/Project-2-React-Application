@@ -7,14 +7,13 @@ import axios from "axios";
 const API_URL = "http://localhost:5005/new-meals";
 
 function CustomMealPage() {
-
-
   const [name, setName] = useState("");
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
 
   const [meals, setMeals] = useState([]);
+  
   const getAllMeals = () => {
 
     axios

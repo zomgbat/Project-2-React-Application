@@ -11,7 +11,7 @@ function DashboardPage() {
     return (
         <div >
             <ProgressBar/>
-            <input className='calendarInput' onChange={(e) => navigate(`/day/:${e.target.value}`)} type="date" />
+            <input className='calendarInput' onChange={(e) => navigate(`/day/${e.target.value}`)} type="date" />
             <Calendar />
         </div>
 

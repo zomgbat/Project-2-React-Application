@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/DayCardPage.css";
 import MealListCard from "../Components/MealListCard.jsx";
+import { useParams } from "react-router-dom";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
@@ -13,7 +14,9 @@ function DayCardPage() {
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
-  const [dayCalories, setDayCalories]=useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
+  const [dayCalories, setDayCalories] = useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
+
+  const { date } = useParams()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,13 +28,46 @@ function DayCardPage() {
     });
     setDayMeals(filterArray);
   }
+  const getDay = () => {
+    axios
+      .get(`http://localhost:5005/days/${date}`)
+      .then((response) => {
+        setDayMeals(response.data.meals)
+        setDayCalories(response.data.totalCalories)
+      })
+      .catch((error) => {
+        axios
+          .post('http://localhost:5005/days', { id: date, meals: dayMeals, totalCalories: dayCalories })
+          .then((response) => {
+            setDayMeals(response.data.meals)
+          })
+          .catch((error) => error)
+      })
+  }
+
+  useEffect(() => {
+    getDay()
+  }, [])
 
   const addNew = (meal) => {
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
-    const updateCalories = dayCalories+meal.calories;
+    const updateCalories = dayCalories + meal.calories;
     setDayCalories(updateCalories)
   };
+
+  const daySubmit = (e) => {
+    axios
+      .patch(`http://localhost:5005/days/${date}`, { meals: dayMeals, totalCalories: dayCalories })
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => error);
+  }
+
+  useEffect(() => {
+    daySubmit()
+  }, [dayMeals])
 
   const getAllMeals = () => {
     axios
@@ -51,7 +87,6 @@ function DayCardPage() {
     <>
       <h1>Day Card Page</h1>
       <p className="todayMeal">Today you ate:</p>{" "}
-      {/* className used to be todayMeat*/}
       <p className="todayMeal">{`${dayCalories} calories`}</p>
       <div id="meal-card-container">
         {dayMeals.map((meal, index) => {

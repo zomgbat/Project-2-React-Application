@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     switch (location.pathname) {
       case "/":
-        setTitle("AppName");
+        setTitle("Tomassure");
         break;
       /* case '/day/:date':
         setTitleApp("Today's calories count");
