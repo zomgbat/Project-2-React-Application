@@ -36,8 +36,6 @@ function UserPage() {
     }, [])
 
 
-
-
     return (
         <>
             <h2> User Name </h2>
@@ -62,8 +60,10 @@ function UserPage() {
                         value={calorieValue} onChange={handleCalorieUpdate}
                     >
 
-                    </input>
-                    <button onClick={() => handleSubmit(calorieValue)}>Submit</button>
+
+            </input>
+            <button className= 'calButton' onClick={() => handleSubmit(calorieValue)}> Set Cal</button>
+
                 </label>
             </div>
         </>
