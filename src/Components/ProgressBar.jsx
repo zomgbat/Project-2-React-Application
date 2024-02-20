@@ -1,13 +1,22 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./ProgressBar.css";
 
 function ProgressBar() {
   const [dayCalories, setDayCalories] = useState(0);
   const [calorieProgress, setCalorieProgress] = useState(0);
+  const [calorieTarget, setCalorieTarget] = useState(0);
 
 
+  useEffect(() => {
+    axios
+        .get('http://localhost:5005/user')
+        .then((response) => setCalorieTarget(response.data.caloriesGoal))
+        //.then((response)=> console.log(response.data.caloriesGoal))
+        .catch((error) => error)
 
-  const calorieTarget = 2000; // Kumar: this value needs to be replaced with the user's targetCalories value from the database
+})
+
 
 
   
@@ -87,7 +96,7 @@ function ProgressBar() {
           style={{ width: `${calorieProgress}%`, backgroundColor: getColor() }}
         ></div>
       </div>
-      <div id="progress-label">{`${dayCalories} of 2000 cal.`}</div>
+      <div id="progress-label">{`${dayCalories} of ${calorieTarget} cal.`}</div>
       <button onClick={() => handleDecrease()}>Decrease</button>
       <button onClick={() => handleIncrease()}>Increase</button>
       <button onClick={() => handleReset()}>Reset</button>
