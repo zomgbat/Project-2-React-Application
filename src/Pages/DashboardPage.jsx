@@ -1,5 +1,6 @@
 import '../styles/DashboardPage.css'
 import { useNavigate } from 'react-router-dom';
+import ProgressBar from '../Components/ProgressBar.jsx';
 
 
 function DashboardPage() {
@@ -8,6 +9,7 @@ function DashboardPage() {
 
     return (
         <div >
+            <ProgressBar/>
             <input className='calendar' onChange={(e) => navigate(`/day/:${e.target.value}`)} type="date" />
         </div>
 
