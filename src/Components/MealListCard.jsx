@@ -10,7 +10,7 @@ function MealListCard(props) {
         <div id="meal-card">
             <img src={img} alt={`${name}`}></img>
             <p>{`${name}` /*${id} ${index}*/}</p>
-            <p id="card-footer">{`${calories} cal`} <button onClick={()=>{deleteMeal(index)}}>❌</button></p>
+            <p id="card-footer">{`${calories} cal`} <button onClick={()=>{deleteMeal(index, calories)}}>❌</button></p>
         </div>
     )
 }
