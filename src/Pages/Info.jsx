@@ -9,7 +9,7 @@ function InfoPage() {
 
             <div className="infoPageContainer">
                 <p>
-                    This app. provides an easy way to <b> monitor your calories consumed per day, and the types of foods you have been eating (i.e fruit and veg.). </b>
+                    Tomasure provides an easy way to <span> monitor your daily calories, and the types of foods you have been eating (i.e fruit and veg.). </span>
 
                     <br></br>
                     <br></br>
