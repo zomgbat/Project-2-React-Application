@@ -87,7 +87,8 @@ function DayCardPage() {
 
   return (
     <>
-      <h1>Day Card Page</h1>
+    <div className="completeCard"> 
+      <h2>Day Card Page</h2>
       <p className="todayMeal">Today you ate:</p>{" "}
       <p className="todayMeal">{`${dayCalories} calories`}</p>
       <div id="meal-card-container">
@@ -154,6 +155,7 @@ function DayCardPage() {
           onChange={(e) => setImg(e.target.value)}
         />
         <button
+          className="btn"
           type="submit"
           onClick={() => {
             addNew({ name, calories, description, img });
@@ -162,17 +164,8 @@ function DayCardPage() {
           {" "}
           Add quick meal
         </button>
-        <button
-          className="btn"
-          type="submit"
-          onClick={() => {
-            addNew({ name, calories, description, img });
-          }}
-        >
-          {" "}
-          Add frequent meal
-        </button>
       </form>
+      </div>
     </>
   );
 }

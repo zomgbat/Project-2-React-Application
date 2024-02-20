@@ -6,7 +6,7 @@
     flex-wrap: wrap; /* Allow items to wrap if not enough space */
     justify-content: space-between; /* Space out items */
     overflow-y: scroll;
-    height: 80vh;
+    height: 70vh;
     color: #6f8b72;
     padding: 0px 50px;
     gap: 30px;
