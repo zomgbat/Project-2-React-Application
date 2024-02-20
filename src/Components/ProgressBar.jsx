@@ -2,27 +2,35 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ProgressBar.css";
 
-function ProgressBar() {
-  const [dayCalories, setDayCalories] = useState(0);
+function ProgressBar(props) {
+  const [dayCalories, setDayCalories] = useState(props.dayCalories);
   const [calorieProgress, setCalorieProgress] = useState(0);
   const [calorieTarget, setCalorieTarget] = useState(0);
 
-
-  useEffect(() => {
-    axios
-        .get('http://localhost:5005/user')
-        .then((response) => setCalorieTarget(response.data.caloriesGoal))
-        //.then((response)=> console.log(response.data.caloriesGoal))
-        .catch((error) => error)
-
-})
-
-
-
-  
   const updateProgressBar = (cal) => {
     setCalorieProgress((cal / calorieTarget) * 100);
   };
+
+  useEffect(() => {
+    
+    axios
+      .get('http://localhost:5005/user')
+      .then((response) => {
+        setCalorieTarget(response.data.caloriesGoal)
+     
+        updateProgressBar(Number(props.dayCalories));
+        console.log(response.data.totalCalories);
+      })
+      //.then((response)=> console.log(response.data.caloriesGoal))
+      .catch((error) => error)
+
+  }, [props.dayCalories])
+
+
+
+
+
+  /*
 
   const handleDecrease = () => {
     let updateCalories = dayCalories;
@@ -46,6 +54,8 @@ function ProgressBar() {
     setDayCalories(updateCalories);
     updateProgressBar(updateCalories);
   };
+
+  */
 
   const getColor = () => {
     if (dayCalories <= calorieTarget * 0.25) {
@@ -96,10 +106,12 @@ function ProgressBar() {
           style={{ width: `${calorieProgress}%`, backgroundColor: getColor() }}
         ></div>
       </div>
-      <div id="progress-label">{`${dayCalories} of ${calorieTarget} cal.`}</div>
-      <button onClick={() => handleDecrease()}>Decrease</button>
+      <div id="progress-label">{`${props.dayCalories} of ${calorieTarget} cal.`}</div>
+
+      { /* <button onClick={() => handleDecrease()}>Decrease</button>
       <button onClick={() => handleIncrease()}>Increase</button>
-      <button onClick={() => handleReset()}>Reset</button>
+  <button onClick={() => handleReset()}>Reset</button> */}
+
     </div>
   );
 }
