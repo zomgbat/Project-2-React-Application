@@ -1,6 +1,7 @@
 import '../styles/BigCalendar.css'; // Make sure your CSS file is correctly imported
 
 const Calendar = () => {
+    // Marcel: What is this???? 👇🤷
     const days = Array.from({ length: 31 }, (_, i) => i + 1); // Generate an array of 30 days
   
     return (

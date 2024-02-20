@@ -13,7 +13,7 @@ function DayCardPage() {
   const [calories, setCalories] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
-  const [dayCalories, setDayCalories]=useState(0);
+  const [dayCalories, setDayCalories] = useState(0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,15 +21,15 @@ function DayCardPage() {
 
   const deleteMeal = (deleteIndex) => {
     const filterArray = dayMeals.filter((meal, index) => {
-        return deleteIndex != index;
-      });
-      setDayMeals(filterArray);
+      return deleteIndex != index;
+    });
+    setDayMeals(filterArray);
   }
 
   const addNew = (meal) => {
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Do we need this here?
-    const updateCalories = dayCalories+meal.calories;
+    const updateCalories = dayCalories + meal.calories;
     setDayCalories(updateCalories)
   };
 
@@ -47,9 +47,9 @@ function DayCardPage() {
     setId(mealsData.length);
   }, [mealsData]);
 
-useEffect(()=>{
-    deleteMeal();
-}, [])
+  useEffect(() => {
+    deleteMeal(); // Marcel: Delete meal at the beginning??
+  }, [])
 
   return (
     <>
@@ -58,13 +58,13 @@ useEffect(()=>{
       {/* className used to be todayMeat*/}
       <p className="todayMeal">{`${dayCalories} calories`}</p>
       <div id="meal-card-container">
-      {dayMeals.map((meal, index) => {
-        // Day meal cards go here
-        //return <img width={"80px"} src={meal.img} key={meal.id} alt={meal.name}/> // Display only the meal image
-        return (
-          <MealListCard key={index} index={index} meal={meal} deleteMeal={deleteMeal} />
-        );
-      })}
+        {dayMeals.map((meal, index) => {
+          // Day meal cards go here
+          //return <img width={"80px"} src={meal.img} key={meal.id} alt={meal.name}/> // Display only the meal image
+          return (
+            <MealListCard key={index} index={index} meal={meal} deleteMeal={deleteMeal} />
+          );
+        })}
       </div>
       <p className="searchMeal">Search here your meal:</p>{" "}
       {/* className used to be searchMeat*/}
@@ -86,7 +86,7 @@ useEffect(()=>{
       {mealSearchResults.map((meal) => {
         return (
           <img
-            width={"40px"}
+            width={"40px"} // Marcel: Remember to add a className to the img tag so you can style it in css
             onClick={() => {
               addNew(meal);
             }}

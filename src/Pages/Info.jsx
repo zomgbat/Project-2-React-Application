@@ -24,7 +24,7 @@ function InfoPage() {
                     <br></br>
                     <br></br>
                 </p>
-                <img className="infoImage" src="../src/images/info.png" alt="Info Sheet" />
+                <img className="infoImage" src="../src/images/info.png" alt="Info Sheet" /> {/* Marcel: The image is nice but not readable on mobile. */}
             </div>
         </div>
     );
