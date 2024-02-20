@@ -47,10 +47,6 @@ function DayCardPage() {
     setId(mealsData.length);
   }, [mealsData]);
 
-  useEffect(() => {
-    deleteMeal(); // Marcel: Delete meal at the beginning??
-  }, [])
-
   return (
     <>
       <h1>Day Card Page</h1>
@@ -85,8 +81,7 @@ function DayCardPage() {
       />
       {mealSearchResults.map((meal) => {
         return (
-          <img
-            width={"40px"} // Marcel: Remember to add a className to the img tag so you can style it in css
+          <img className="searchImg"
             onClick={() => {
               addNew(meal);
             }}

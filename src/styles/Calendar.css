@@ -1,4 +1,4 @@
-.big-calendar {
+.calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr); /* 7 columns */
   grid-template-rows: repeat(5, 1fr); /* 5 rows */

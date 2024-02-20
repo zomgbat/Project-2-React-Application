@@ -1,4 +1,4 @@
-import "./MealListCard.css";
+import "../styles/MealListCard.css";
 
 function MealListCard(props) {
 
