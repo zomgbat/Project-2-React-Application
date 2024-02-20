@@ -6,13 +6,30 @@ import '../styles/UserPage.css'
 function UserPage() {
 
     const [user, setUser] = useState('');
+    const [calorieValue, setCalorieValue]=useState("");
 
-   useEffect(()=> {
-       axios
-           .get('http://localhost:5005/user')
-           .then((response) => setUser(response.data))
-           .catch((error) => error)
-   },[])
+    const handleCalorieUpdate = (e)=> setCalorieValue(e.target.value);
+
+
+    const handleSubmit = (cal) => {
+        axios
+            .patch('http://localhost:5005/user', {
+                caloriesGoal: cal
+            })
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));
+            setCalorieValue("");
+    };
+
+    useEffect(() => {
+        axios
+            .get('http://localhost:5005/user')
+            .then((response) => setUser(response.data))
+            .catch((error) => error)
+
+    })
+
+
 
 
     return (
@@ -34,6 +51,14 @@ function UserPage() {
                 <label>Calories Goal: </label>
                 <p> {user.caloriesGoal}</p>
 
+                <label> Update Calorie Goal
+            <input className="calorie-input" type="number"
+             value={calorieValue} onChange={handleCalorieUpdate}
+             >
+
+            </input>
+            <button onClick={() => handleSubmit(calorieValue)}>Submit</button>
+                </label>
             </div>
         </>
 
