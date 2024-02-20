@@ -21,9 +21,9 @@ function DayCardPage() {
 
   const deleteMeal = (deleteIndex) => {
     const filterArray = dayMeals.filter((meal, index) => {
-        return deleteIndex != index;
-      });
-      setDayMeals(filterArray);
+      return deleteIndex != index;
+    });
+    setDayMeals(filterArray);
   }
 
   const addNew = (meal) => {
@@ -47,10 +47,6 @@ function DayCardPage() {
     setId(mealsData.length);
   }, [mealsData]);
 
-useEffect(()=>{
-    deleteMeal();
-}, [])
-
   return (
     <>
       <h1>Day Card Page</h1>
@@ -58,13 +54,13 @@ useEffect(()=>{
       {/* className used to be todayMeat*/}
       <p className="todayMeal">{`${dayCalories} calories`}</p>
       <div id="meal-card-container">
-      {dayMeals.map((meal, index) => {
-        // Day meal cards go here
-        //return <img width={"80px"} src={meal.img} key={meal.id} alt={meal.name}/> // Display only the meal image
-        return (
-          <MealListCard key={index} index={index} meal={meal} deleteMeal={deleteMeal} />
-        );
-      })}
+        {dayMeals.map((meal, index) => {
+          // Day meal cards go here
+          //return <img width={"80px"} src={meal.img} key={meal.id} alt={meal.name}/> // Display only the meal image
+          return (
+            <MealListCard key={index} index={index} meal={meal} deleteMeal={deleteMeal} />
+          );
+        })}
       </div>
       <p className="searchMeal">Search here your meal:</p>{" "}
       {/* className used to be searchMeat*/}
@@ -85,8 +81,7 @@ useEffect(()=>{
       />
       {mealSearchResults.map((meal) => {
         return (
-          <img
-            width={"40px"}
+          <img className="searchImg"
             onClick={() => {
               addNew(meal);
             }}
