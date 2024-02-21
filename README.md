@@ -65,6 +65,9 @@ Wireframes
 <img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-01.jpg" alt="Add meal wireframe 2" width="200px">
 
 
+<img src="src\images\info.png" alt="info." width="200px">
+
+
 Presentation Link
 =================
 
