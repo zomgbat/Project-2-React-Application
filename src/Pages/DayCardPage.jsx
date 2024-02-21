@@ -184,7 +184,7 @@ function DayCardPage() {
           <input
             type="number"
             value={calories}
-            onChange={(e) => setCalories(e.target.value)}
+            onChange={(e) => setCalories(Number(e.target.value))}
           />
           <label>Description:</label>
           <input
