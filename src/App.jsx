@@ -27,7 +27,7 @@ function App() {
         setTitleApp("Today's calories count");
         break; */
       case '/about':
-        setTitle("About US");
+        setTitle("About Us");
         break;
       case '/custom-meal':
         setTitle("Custom meals");
