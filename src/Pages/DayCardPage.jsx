@@ -70,7 +70,7 @@ function DayCardPage() {
       .get("http://localhost:5005/meals")
       
     const promise2 = axios
-        .get("http://localhost:5005/new-meals")
+        .get("http://localhost:5005/frequent-meals")
           
     Promise.all([promise1, promise2])
     .then((responses)=>setMealsData([...responses[0].data, ...responses[1].data]))
