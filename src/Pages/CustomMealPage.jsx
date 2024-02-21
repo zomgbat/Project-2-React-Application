@@ -42,15 +42,16 @@ function CustomMealPage() {
       return;
     }
 
-    if (img === "") {
-      setImg("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png")
-    };
-
-    if (description === "") {
-      setDescription("Frequent meal added by user.");
-    }
+    
 
     const newMeal = { name, calories: Number(calories), description, img };
+    if (newMeal.img === "") {
+      newMeal.img = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+    }
+
+    if (newMeal.description === "") {
+      newMeal.description ="Just something I found lying around";
+    }
 
     axios
       .post(`${API_URL}`, newMeal)
