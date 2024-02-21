@@ -1,3 +1,25 @@
+
+Welcome to our app.! Our goal is to make your life easier by providing you with a free app. to assist on your nutritional health journey.
+
+We hope you enjoy using and that it helps you achieve your goals. As newbies to web development, we had a great time creating it!
+
+The app. provides an easy way to monitor your daily calories, and the types of foods you have been eating (i.e fruit and veg.).
+
+By automatically calculating your calorie count, based on your entered amount, as well as your target number of a certain food type.
+
+Simply, add meals on the Dashboard (or add customized meals to the New Meal Page). Use the calendar to check your consumed meals and calorie count for any day.
+
+
+The Team
+
+Gavin Alexander is a talented and creative writer who loves football, from Ayr, Scotland. He will use to app. to make sure he eats enough fruit and vegetables.
+
+Barbara Lancuba is an architect and designer originating from Buenos Aires, Argentina. She is an avid runner, tennis player, as well as a vegetarian and animal lover.
+
+Kumar Daryanani has many years experience as a video game designer. From Barcelona, Spain, he loves testing and playing video games as well as trying cuisines from across 
+
+
+
 # Meal Tracker App
 
 | Pages | Route | Description | Links |
