@@ -10,7 +10,7 @@ By automatically calculating your calorie count, based on your entered amount, a
 Simply, add meals on the Dashboard (or add customized meals to the New Meal Page). Use the calendar to check your consumed meals and calorie count for any day.
 
 
-The Team
+<b>The Team</b>
 
 Gavin Alexander is a talented and creative writer who loves football, from Ayr, Scotland. He will use to app. to make sure he eats enough fruit and vegetables.
 
@@ -62,7 +62,7 @@ Wireframes
 <img src="src\assets\readMeAssets\IHP2-MT-WF-About.jpg" alt="About page wireframe" width="200px">
 <img src="src\assets\readMeAssets\IHP2-MT-WF-CustomMeal.jpg" alt="Add custom meal wireframe" width="200px">
 <img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-00.jpg" alt="Add meal wireframe 1" width="200px">
-<img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-01.jpg" alt="Add meal wireframe 2" width="200px">
+<img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-01.jpg" alt="Add meal wireframe 2" width="400px">
 
 
 <img src="src\images\info.png" alt="info." width="200px">
