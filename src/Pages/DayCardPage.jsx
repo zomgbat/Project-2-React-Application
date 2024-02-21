@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
+  const [frequentMealsData, setFrequentMealsData] = useState("") // Frequent meals database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
   const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
 
@@ -46,18 +47,14 @@ function DayCardPage() {
           .catch((error) => error)
       })
   }
-
-  useEffect(() => {
-    getDay()
-  }, [])
-
+  
   const addNew = (meal) => {
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
     const updateCalories = dayCalories + meal.calories;
     setDayCalories(updateCalories)
   };
-
+  
   const daySubmit = (e) => {
     axios
       .patch(`http://localhost:5005/days/${date}`, { meals: dayMeals, totalCalories: dayCalories })
@@ -67,51 +64,61 @@ function DayCardPage() {
       .catch((error) => error);
   }
 
+  const getAllMeals = () => {
+    
+    const promise1 = axios
+      .get("http://localhost:5005/meals")
+      
+    const promise2 = axios
+        .get("http://localhost:5005/new-meals")
+          
+    Promise.all([promise1, promise2])
+    .then((responses)=>setMealsData([...responses[0].data, ...responses[1].data]))
+    .catch((error)=>error)
+      }  
+  
+
+  useEffect(() => {
+    getDay()
+  }, [])
+
   useEffect(() => {
     daySubmit()
   }, [dayMeals])
 
-  const getAllMeals = () => {
-    axios
-      .get("http://localhost:5005/meals")
-      .then((response) => setMealsData(response.data))
-      .catch((error) => error);
-  };
-
   useEffect(() => {
     getAllMeals();
   }, []);
+
   useEffect(() => {
     setId(mealsData.length);
   }, [mealsData]);
 
   return (
     <>
-    <div className="completeCard"> 
+    <div className="completeCard"> {/*Kumar - this should be kebab-case*/ }
       <h2>Day Card Page</h2>
       <p className="todayMeal">Today you ate:</p>{" "}
       <p className="todayMeal">{`${dayCalories} calories`}</p>
       <div id="meal-card-container">
         {dayMeals.map((meal, index) => {
-          // Day meal cards go here
-          //return <img width={"80px"} src={meal.img} key={meal.id} alt={meal.name}/> // Display only the meal image
           return (
             <MealListCard key={index} index={index} meal={meal} deleteMeal={deleteMeal} />
           );
         })}
       </div>
       <p className="searchMeal">Search here your meal:</p>{" "}
-      {/* className used to be searchMeat*/}
+      
+      {/*Kumar - this should be kebab-case*/ }
       <input
-        className="searchBar"
+        className="searchBar" 
         type="text"
         onChange={(event) => {
           if (event.target.value.length === 0) {
             setMealSearchResults([]);
           } else {
             const filterArray = mealsData.filter((meal) => {
-              //return meal.name.includes(event.target.value); // Case sensitive
-              return meal.name.toUpperCase().includes(event.target.value.toUpperCase()); // Case insensitive
+              return meal.name.toUpperCase().includes(event.target.value.toUpperCase());
             });
             setMealSearchResults(filterArray);
           }
@@ -119,7 +126,7 @@ function DayCardPage() {
       />
       {mealSearchResults.map((meal) => {
         return (
-          <img className="searchImg"
+          <img className="searchImg" 
             onClick={() => {
               addNew(meal);
             }}
