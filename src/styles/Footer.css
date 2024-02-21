@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;   /* :relative fixes the DayCardPage but affects the UI of others */
+    position: absolute;   
     display: flex;
     flex-direction: row;
     align-items: center;
