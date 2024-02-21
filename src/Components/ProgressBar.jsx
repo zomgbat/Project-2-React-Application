@@ -4,33 +4,43 @@ import "./ProgressBar.css";
 
 function ProgressBar(props) {
   const [dayCalories, setDayCalories] = useState(props.dayCalories);
-  const [calorieProgress, setCalorieProgress] = useState(0);
   const [calorieTarget, setCalorieTarget] = useState(0);
-
-  const updateProgressBar = (cal) => {
-    setCalorieProgress((cal / calorieTarget) * 100);
-  };
+  const [calorieProgress, setCalorieProgress] = useState(0);
 
   useEffect(() => {
-    
     axios
-      .get('http://localhost:5005/user')
+      .get("http://localhost:5005/user")
       .then((response) => {
-        setCalorieTarget(response.data.caloriesGoal)
-     
+        setCalorieTarget(response.data.caloriesGoal);
+
         updateProgressBar(Number(props.dayCalories));
-        console.log(response.data.totalCalories);
+        //console.log(response.data.totalCalories);
       })
       //.then((response)=> console.log(response.data.caloriesGoal))
-      .catch((error) => error)
+      .catch((error) => error);
+  }, [props.dayCalories]);
 
-  }, [props.dayCalories])
+  const getColor = () => {
+    if (calorieProgress < 60) {
+      return "#00FF00";
+    } else if (calorieProgress < 70) {
+      return "#FFFF00";
+    } else if (calorieProgress < 95) {
+      return "#FFAA00";
+    } else if (calorieProgress > 110) {
+      return "#AA0000"
+    } else {
+      return "#FF0000";
+    }
+  };
 
+  const updateProgressBar = (cal) => {
+    cal === 0? setCalorieProgress(0) : setCalorieProgress((cal / calorieTarget) * 100);
+  
+    console.log(calorieProgress, );
+  };
 
-
-
-
-  /*
+  /* Kumar - Uncomment this or the debug buttons won't work!
 
   const handleDecrease = () => {
     let updateCalories = dayCalories;
@@ -57,47 +67,6 @@ function ProgressBar(props) {
 
   */
 
-  const getColor = () => {
-    if (dayCalories <= calorieTarget * 0.25) {
-      return "#00FF00";
-    } else if (dayCalories <= calorieTarget * 0.5) {
-      return "#33CC33";
-    } else if (dayCalories <= calorieTarget) {
-      return "#FFFF00";
-    } else {
-      return "#FF0000";
-    }
-  };
-
-  /*
-      const updateProgressBar = (cal)=>{
-        setCalorieProgress((cal/calorieTarget)*100)
-      }
-      
-      const handleClick = (type)=>{
-        let updateCalories = dayCalories
-        switch(type) {
-            case "decrease":
-                updateCalories -= 100;
-                if (updateCalories <0) {
-                    updateCalories = 0;
-                }
-                break;
-            case "increase":
-                updateCalories += 100;
-                break;
-            case "reset":
-                updateCalories = 0;
-                break;
-            default:
-                break;
-        }
-        setDayCalories(updateCalories);
-        updateProgressBar(updateCalories);
-      }
-  },[])
-*/
-
   return (
     <div id="progress-bar-container">
       <div id="progress-bar">
@@ -108,10 +77,10 @@ function ProgressBar(props) {
       </div>
       <div id="progress-label">{`${props.dayCalories} of ${calorieTarget} cal.`}</div>
 
-      { /* <button onClick={() => handleDecrease()}>Decrease</button>
+      {/* Debug buttons to test functionality
+      <button onClick={() => handleDecrease()}>Decrease</button>
       <button onClick={() => handleIncrease()}>Increase</button>
   <button onClick={() => handleReset()}>Reset</button> */}
-
     </div>
   );
 }
