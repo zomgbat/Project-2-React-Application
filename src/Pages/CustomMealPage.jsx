@@ -30,7 +30,26 @@ function CustomMealPage() {
 
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
+
+    if (name === "") {
+      window.alert("Please enter a meal name")
+      return;
+    }
+
+    if (calories === "") {
+      window.alert("Please enter a calorie amount");
+      return;
+    }
+
+    if (img === "") {
+      setImg("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png")
+    };
+
+    if (description === "") {
+      setDescription("Frequent meal added by user.");
+    }
+
     const newMeal = { name, calories: Number(calories), description, img };
 
     axios
@@ -58,12 +77,6 @@ function CustomMealPage() {
         .catch((error) => console.log(error));
   }
 
-
-
-
-
-
-
   return (
     <>
       <div >
@@ -81,22 +94,24 @@ function CustomMealPage() {
           </label>
 
           <label>
-            Recipe Image
+            Photo
             <input value={img} onChange={(event) => { setImg(event.target.value) }} id="setImg" type="url" />
           </label>
 
           <label>
-            Servings
-            <input value={description} onChange={(event) => { setDescription(event.target.value) }} id="setDescription" type="text" />
+            Description
+            <textarea value={description} onChange={(event) => { setDescription(event.target.value) }} id="setDescription" cols="20" rows="5"></textarea>
           </label>
+          {/* <label>
+            Description
+            <input value={description} onChange={(event) => { setDescription(event.target.value) }} id="setDescription" type="text" />
+          </label> */}
 
           <div className="moveBtn">
-            <button className='addNewButton' type="submit">Add Frequent Meal!</button>
+            <button className='addNewButton' type="submit">Add Frequent Meal</button>
           </div>
 
         </form>
-
-
 
         {meals.map((meal) => {
           return (
@@ -104,7 +119,6 @@ function CustomMealPage() {
               <h3>{meal.name}</h3>
 
               <button className="delete-button" onClick={() => handleDelete(meal.id)}>Delete</button>
-
 
             </div>
           );
