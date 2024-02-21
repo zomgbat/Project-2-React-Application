@@ -4,11 +4,11 @@ function AboutPage() {
   return (
     <div className="about-container">
       <p>
-        Welcome to Tomasure! Our goal with this app is to make your life easier
-        and provide you with a tool to assist on your nutritional health journey.
+        <b>Welcome to Tomasure! </b>Our goal is to make your life easier
+        by providing you with a free app. to assist on your nutritional health journey.
       </p>
       <p>
-        We hope it proves useful, and that you enjoy using it every day. We had a great time creating it as newbies to web and app development!
+        We hope you enjoy using and that it helps you achieve your goals. As newbies to web development, we had a great time creating it!
       </p>
 
       {/*<p>
@@ -20,11 +20,13 @@ function AboutPage() {
   </p>*/}
 
       <div className="creators">
-        <h2>The Team</h2>
+        <h2><u>The Team</u></h2>
         {/* <h5> Member 1 : </h5> */}
-        <h5>Gavin Alexander </h5>
+        <h5><u>Gavin Alexander</u> </h5>
         <p>
-          Gavin is a talented and creative writer originating from Ayr, Scotland. He loves football and fruit.
+          Gavin is a talented and creative writer who loves football, from Ayr, Scotland. He will use to app. to make sure he eats enough fruit and vegetables.
+
+
         </p>
         <img
           className="developer1-image"
@@ -33,10 +35,10 @@ function AboutPage() {
         />
 
         {/* <h5> Member 2 : </h5> */}
-        <h5> Barbara Lancuba </h5>
+        <h5> <u>Barbara Lancuba </u></h5>
         <p>
           {" "}
-          Barbara is an architect and designer originating from Buenos Aires, Argentina. She is an avid runner, tennis player, vegetarian, and animal lover.
+          Barbara is an architect and designer originating from Buenos Aires, Argentina. She is an avid runner, tennis player, as well as a vegetarian and animal lover.
         </p>
         <img
           className="developer2-image"
@@ -45,10 +47,13 @@ function AboutPage() {
         />
 
         {/* <h5> Member 3 : </h5> */}
-        <h5> Kumar Daryanani</h5>
+        <h5> <u>Kumar Daryanani </u></h5>
         <p>
           {" "}
-          Kumar has many years of experience designing and programming games. Born and raised in Barcelona, Spain, he loves playing video games eating food from across the world.
+          Kumar has many years experience as a video game designer. 
+
+
+          From Barcelona, Spain, he loves testing and playing video games as well as trying cuisines from across the world.
         </p>
         <img
           className="developer3-image"
