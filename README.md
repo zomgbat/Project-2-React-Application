@@ -62,10 +62,10 @@ Wireframes
 <img src="src\assets\readMeAssets\IHP2-MT-WF-About.jpg" alt="About page wireframe" width="200px">
 <img src="src\assets\readMeAssets\IHP2-MT-WF-CustomMeal.jpg" alt="Add custom meal wireframe" width="200px">
 <img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-00.jpg" alt="Add meal wireframe 1" width="200px">
-<img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-01.jpg" alt="Add meal wireframe 2" width="400px">
+<img src="src\assets\readMeAssets\IHP2-MT-WF-AddMeals-01.jpg" alt="Add meal wireframe 2" width="200px">
 
 
-<img src="src\images\info.png" alt="info." width="200px">
+<img src="src\images\info.png" alt="info." width="500px">
 
 
 Presentation Link
