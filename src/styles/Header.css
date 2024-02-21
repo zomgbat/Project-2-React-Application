@@ -1,24 +1,20 @@
-.footer {
-    position: absolute;
+
+header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: #6f8b72;
     padding: 20px;
-    bottom: 0;
-    width: 100%;
-}
+    height: 9vh;
+  }
 
-.nav {
-    color: rgb(245, 237, 232);
-    text-decoration: none;
-    font-size: 15px;
+.logo {
     background-color: transparent;
-    text-decoration: none;
+    width: 40px;
 }
 
-.nav:hover{
+.logo:hover{
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;
@@ -26,13 +22,20 @@
     padding: 5px;
 }
 
-.home img{
+.title {
+    color: rgb(245, 237, 232);
+    text-decoration: none;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+.user img{
     background-color: transparent;
     width: 25px;
     height: 25px;
 }
 
-.home:hover{
+.user:hover{
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;

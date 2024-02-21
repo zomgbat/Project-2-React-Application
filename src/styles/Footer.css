@@ -1,0 +1,43 @@
+.footer {
+    position: absolute;   /* :relative fixes the DayCardPage but affects the UI of others */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #6f8b72;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    height: 7vh;
+    
+}
+
+.nav {
+    color: rgb(245, 237, 232);
+    text-decoration: none;
+    font-size: 15px;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.nav:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #bc1001; 
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.home img{
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+}
+
+.home:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #bc1001; 
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 3px;
+}

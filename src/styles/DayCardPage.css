@@ -1,4 +1,4 @@
-.todayMeat{
+.todayMeal{ /*Used to be todayMeat*/
     color: #6f8b72;
     text-decoration: none;
     font-size: 20px;
@@ -6,7 +6,7 @@
     padding: 20px;
 }
 
-.searchMeat{
+.searchMeal{ /*Used to be searchMeat*/
     color: #6f8b72;
     text-decoration: none;
     font-size: 20px;
@@ -23,7 +23,7 @@ h5{
     padding: 10px;
 }
 
-.form{
+.quick-meal-form{
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -58,4 +58,21 @@ h5{
     opacity: 60%;
     padding: 10px;
     margin: 20px 0px; 
+}
+
+#meal-card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0 10px;
+    flex-wrap: wrap;
+}
+
+.searchImg{
+    width: 40px;
+}
+
+.completeCard{
+      overflow-y: scroll;
+      height: 80vh;
 }

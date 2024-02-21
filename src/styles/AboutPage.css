@@ -1,23 +1,23 @@
 .about-container {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-    width: 80%;
-    font-size: 15px;
+    max-width: auto;
+    font-size: 17px;
     padding: 20px;
-    margin: 40px;
+    margin: 15px;
     gap: 40px;
     color: #6f8b72;
     overflow-y: scroll;
-    height: 80vh;
+    height: 84vh;
 }
 .creators{
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 25px;
+  padding-bottom: 30px;
 }
 
 h6{

@@ -57,3 +57,8 @@ label{
     margin: 20px 0px;
     width: 200px;
 }
+
+.customContainer{
+    overflow-y: scroll;
+    height: 84vh;
+}
