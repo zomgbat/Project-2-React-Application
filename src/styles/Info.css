@@ -1,18 +1,19 @@
 
 .infoPageContainer {
-    max-width: auto; /* Maximum width */
+    max-width: 750px; /* Maximum width */
     padding: 20px; /* Add some padding inside the container */
-    display: flex; /* Using flexbox to arrange child elements */
-    flex-wrap: wrap; /* Allow items to wrap if not enough space */
+    display: flex;/* Using flexbox to arrange child elements */
+    flex-direction: column;
+    /* flex-wrap: wrap; /* Allow items to wrap if not enough space */ 
     justify-content: space-between; /* Space out items */
+    align-items: center;
     overflow-y: scroll;
-    height: 70vh;
     color: #6f8b72;
     padding: 0px 50px;
-    gap: 30px;
-    font-size: 17px;
+    gap: 10px;
+    height: 84vh;
   }
-  
+
   .infoButton {
     display: inline-block;
     padding: 10px 20px;

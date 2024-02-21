@@ -5,9 +5,9 @@ function InfoPage() {
     return (
 
         <div>
-            <h2> Where to start </h2>
 
             <div className="infoPageContainer">
+            <h2> Where to start </h2>
                 <p>
                     Tomasure provides an easy way to <span> monitor your daily calories, and the types of foods you have been eating (i.e fruit and veg.). </span>
 

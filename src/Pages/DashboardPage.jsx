@@ -41,7 +41,6 @@ useEffect(() => {
     return (
         <div >
             <ProgressBar dayCalories = {dayCalories}/>
-            <input className='calendarInput' onChange={(e) => navigate(`/day/${e.target.value}`)} type="date" />
             <Calendar />
         </div>
 

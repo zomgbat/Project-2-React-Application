@@ -80,7 +80,7 @@ function CustomMealPage() {
 
   return (
     <>
-      <div >
+      <div className="customContainer">
         <form className="form-container" onSubmit={handleSubmit}>
           <span className="titleMeal">Add a Frequent Meal</span>
 
