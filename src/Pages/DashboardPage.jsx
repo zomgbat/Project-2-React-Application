@@ -36,8 +36,6 @@ useEffect(() => {
 
 },[]) 
 
-
-
     return (
         <div >
             <ProgressBar dayCalories = {dayCalories}/>

@@ -1,16 +1,14 @@
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  /* 7 columns */
   grid-template-rows: repeat(5, 1fr);
-  /* 5 rows */
   gap: 5px;
-  /* Space between grid items */
-  height: 300px;
-  /* Adjust height as needed */
-  overflow-x: auto;
-  /* Enables  scrolling if content overflows */
-  padding: 10px;
+  height: 400px;
+  margin: 20px;
+  max-width: 700px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
   border: 1px solid #d0d0d0;
   background-color: #fff;
 }
@@ -18,12 +16,18 @@
 .day {
   display: flex;
   align-items: center;
-  /* Vertically center the content */
   justify-content: center;
-  /* Horizontally center the content */
   padding: 10px;
   background-color: #f0f0f0;
   border: 1px solid #d0d0d0;
+  text-decoration: none;
+  color: #6f8b72;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.day div {
+  background-color: transparent;
 }
 
 #month-bar {
@@ -44,7 +48,7 @@
 }
 
 .blank{
-  /* background-color: #fff; */
+  border-radius: 100%;
 }
 
 .weekday{

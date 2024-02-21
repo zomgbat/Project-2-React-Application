@@ -51,8 +51,8 @@ function Calendar() {
         ))}
 
         {days.map(day => (
-          <Link key={day} to={`/day/${year}-${String(month+1).padStart(2, '0')}-${String(day).padStart(2,'0')}`}>
-            <div className="day">{day}</div>
+          <Link className="day" key={day} to={`/day/${year}-${String(month+1).padStart(2, '0')}-${String(day).padStart(2,'0')}`}>
+            <div>{day}</div>
           </Link>
         ))}
       </div>
