@@ -22,10 +22,6 @@ function DayCardPage() {
 
   const { date } = useParams();
 
-  // const toggleForm = (event)=>{
-  //   setShowForm(!showForm);
-  // }
-
   const handleSubmit = (event) => {
     event.preventDefault();
   };
