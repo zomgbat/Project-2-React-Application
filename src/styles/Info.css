@@ -1,6 +1,6 @@
 
 .infoPageContainer {
-    max-width: 750px; /* Maximum width */
+    max-width: auto; /* Maximum width */
     padding: 20px; /* Add some padding inside the container */
     display: flex; /* Using flexbox to arrange child elements */
     flex-wrap: wrap; /* Allow items to wrap if not enough space */

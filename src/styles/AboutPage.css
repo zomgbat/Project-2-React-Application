@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-    width: auto;
+    max-width: auto;
     font-size: 17px;
     padding: 20px;
     margin: 15px;

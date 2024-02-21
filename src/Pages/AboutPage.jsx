@@ -8,7 +8,7 @@ function AboutPage() {
         by providing you with a free app. to assist on your nutritional health journey.
       </p>
       <p>
-        We hope you enjoy using and that it helps you achieve your goals. As newbies to web development, we had a great time creating it!
+        We hope that it helps you achieve your goals and you enjoy using it. As newbies to web development, we had a great time creating it!
       </p>
 
       {/*<p>
@@ -24,7 +24,7 @@ function AboutPage() {
         {/* <h5> Member 1 : </h5> */}
         <h5><u>Gavin Alexander</u> </h5>
         <p>
-          Gavin is a talented and creative writer who loves football, from Ayr, Scotland. He will use to app. to make sure he eats enough fruit and vegetables.
+          Gavin is a talented and creative writer who loves football, from Ayr, Scotland. He will use the app. to make sure he eats enough fruit and vegetables.
 
 
         </p>
@@ -53,7 +53,7 @@ function AboutPage() {
           Kumar has many years experience as a video game designer. 
 
 
-          From Barcelona, Spain, he loves testing and playing video games as well as trying cuisines from across the world.
+          From Barcelona, Spain, he loves testing and playing video games, also trying different cuisines from around the world.
         </p>
         <img
           className="developer3-image"
