@@ -1,15 +1,10 @@
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  /* 7 columns */
   grid-template-rows: repeat(5, 1fr);
-  /* 5 rows */
   gap: 5px;
-  /* Space between grid items */
   height: 300px;
-  /* Adjust height as needed */
   overflow-x: auto;
-  /* Enables  scrolling if content overflows */
   padding: 10px;
   border: 1px solid #d0d0d0;
   background-color: #fff;
@@ -18,9 +13,7 @@
 .day {
   display: flex;
   align-items: center;
-  /* Vertically center the content */
   justify-content: center;
-  /* Horizontally center the content */
   padding: 10px;
   background-color: #f0f0f0;
   border: 1px solid #d0d0d0;
@@ -43,11 +36,11 @@
   border-radius: 50%;
 }
 
-.blank{
+.blank {
   /* background-color: #fff; */
 }
 
-.weekday{
+.weekday {
   height: 20px;
   background-color: transparent;
   text-align: center;
