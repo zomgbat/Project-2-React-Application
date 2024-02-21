@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/DayCardPage.css";
 import MealListCard from "../Components/MealListCard.jsx";
-import { useParams } from "react-router-dom";
+import ProgressBar from "../Components/ProgressBar.jsx";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
@@ -52,7 +53,7 @@ function DayCardPage() {
       });
   };
 
-  const addNew = (meal) => {
+  const addQuickMeal = (meal) => {
     if (name === "") {
       window.alert("Please enter a meal name");
       return;
@@ -70,6 +71,11 @@ function DayCardPage() {
     if (description === "") {
       meal.description ="Just something I found lying around";
     }
+    addNew(meal);
+
+  }
+  const addNew = (meal) => {
+    
 
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
@@ -89,7 +95,7 @@ function DayCardPage() {
         totalCalories: dayCalories,
       })
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
       })
       .catch((error) => error);
   };
@@ -124,6 +130,7 @@ function DayCardPage() {
 
   return (
     <>
+      <ProgressBar dayCalories = {dayCalories}/>
       <div className="completeCard">
         {" "}
         {/*Kumar - this should be kebab-case*/}
@@ -202,7 +209,7 @@ function DayCardPage() {
             className="btn"
             type="submit"
             onClick={() => {
-              addNew({ name, calories, description, img });
+              addQuickMeal({ name, calories, description, img });
             }}
           >
             {" "}
