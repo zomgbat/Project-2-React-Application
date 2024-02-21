@@ -4,7 +4,7 @@ import '../styles/CustomMealPage.css'
 import axios from "axios";
 
 
-const API_URL = "http://localhost:5005/new-meals";
+const API_URL = "http://localhost:5005/frequent-meals";
 
 function CustomMealPage() {
   const [name, setName] = useState("");
