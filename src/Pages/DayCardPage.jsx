@@ -18,7 +18,13 @@ function DayCardPage() {
   const [img, setImg] = useState("");
   const [dayCalories, setDayCalories] = useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
 
+  const [showForm, setShowForm] = useState(false);
+
   const { date } = useParams();
+
+  // const toggleForm = (event)=>{
+  //   setShowForm(!showForm);
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -131,12 +137,12 @@ function DayCardPage() {
   return (
     <>
       <ProgressBar dayCalories = {dayCalories}/>
-      <div className="completeCard">
+      <div className="complete-card">
         {" "}
         {/*Kumar - this should be kebab-case*/}
         <h2>Day Card Page</h2>
-        <p className="todayMeal">Today you ate:</p>{" "}
-        <p className="todayMeal">{`${dayCalories} calories`}</p>
+        <p className="today-meal">Today you ate:</p>{" "}
+        <p className="today-meal">{`${dayCalories} calories`}</p>
         <div id="meal-card-container">
           {dayMeals.map((meal, index) => {
             return (
@@ -149,10 +155,10 @@ function DayCardPage() {
             );
           })}
         </div>
-        <p className="searchMeal">Search here your meal:</p>{" "}
+        <p className="search-meal">Search meals:</p>{" "}
         {/*Kumar - this should be kebab-case*/}
         <input
-          className="searchBar"
+          className="search-bar"
           type="text"
           onChange={(event) => {
             if (event.target.value.length === 0) {
@@ -170,7 +176,7 @@ function DayCardPage() {
         {mealSearchResults.map((meal) => {
           return (
             <img
-              className="searchImg"
+              className="search-img"
               onClick={() => {
                 addNew(meal);
               }}
@@ -180,42 +186,50 @@ function DayCardPage() {
             />
           );
         })}
-        <form className="quick-meal-form" onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <label>Calories:</label>
-          <input
-            type="number"
-            value={calories}
-            onChange={(e) => setCalories(Number(e.target.value))}
-          />
-          <label>Description:</label>
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label>Img:</label>
-          <input
-            type="text"
-            value={img}
-            onChange={(e) => setImg(e.target.value)}
-          />
-          <button
-            className="btn"
-            type="submit"
-            onClick={() => {
-              addQuickMeal({ name, calories, description, img });
-            }}
-          >
-            {" "}
-            Add quick meal
-          </button>
-        </form>
+        { showForm ? (
+            <form className="quick-meal-form" onSubmit={handleSubmit}>
+              <label>Name:</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <label>Calories:</label>
+              <input
+                type="number"
+                value={calories}
+                onChange={(e) => setCalories(Number(e.target.value))}
+              />
+              <label>Description:</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <label>Photo URL:</label>
+              <input
+                type="text"
+                value={img}
+                onChange={(e) => setImg(e.target.value)}
+              />
+              <button
+                className="btn"
+                type="submit"
+                onClick={() => {
+                  addQuickMeal({ name, calories, description, img });
+                }}
+              >
+                Add quick meal
+              </button>
+            <button className="btn" onClick={()=>console.log(setShowForm(!showForm))}>Close Form</button>
+            </form>
+
+          ) : (
+            <div className="quick-meal-form">
+            <button className="btn" onClick={()=>console.log(setShowForm(!showForm))}>Add New Meal</button>
+            </div>
+          )
+        }
       </div>
     </>
   );
