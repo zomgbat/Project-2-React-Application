@@ -8,8 +8,6 @@ import QuickMealForm from "../Components/QuickMealForm.jsx";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
-  // REFACTOR 👇 (is the variable used?)
-  const [frequentMealsData, setFrequentMealsData] = useState(""); // Frequent meals database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
   const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
 
@@ -36,6 +34,7 @@ function DayCardPage() {
     });
     setDayMeals(filterArray);
   };
+
   const getDay = () => {
     axios
       .get(`http://localhost:5005/days/${date}`)
@@ -43,20 +42,26 @@ function DayCardPage() {
         setDayMeals(response.data.meals);
         setDayCalories(response.data.totalCalories);
       })
+      .catch((error) => error)
+  };
+
+  const postNewMeals = () => {
+
+    axios
+      .post("http://localhost:5005/days", {
+        id: date,
+        meals: dayMeals,
+        totalCalories: dayCalories,
+      })
+      .then((response) => {
+        setDayMeals(response.data.meals);
+      })
       .catch((error) => {
-        // REFACTOR 👇
-        axios
-          .post("http://localhost:5005/days", {
-            id: date,
-            meals: dayMeals,
-            totalCalories: dayCalories,
-          })
-          .then((response) => {
-            setDayMeals(response.data.meals);
-          })
-          .catch((error) => error);
+        postNewMeals()
       });
   };
+
+
 
   const addQuickMeal = (meal) => {
     if (name === "") {
@@ -80,14 +85,14 @@ function DayCardPage() {
   }
 
   const addNew = (meal) => {
-    
+
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
     const updateCalories = dayCalories + meal.calories;
     setDayCalories(updateCalories);
 
     setName("");
-    setCalories(""); // Reset to an empty string to match the initial state
+    setCalories("");
     setDescription("");
     setImg("");
   };
@@ -97,10 +102,6 @@ function DayCardPage() {
       .patch(`http://localhost:5005/days/${date}`, {
         meals: dayMeals,
         totalCalories: dayCalories,
-      })
-      .then((response) => {
-        // REFACTOR 👇 (are we going to leave it empty or we want to navigate to another page, display a success message...)
-        //console.log(response.data);
       })
       .catch((error) => error);
   };
@@ -116,8 +117,9 @@ function DayCardPage() {
       )
       .catch((error) => error);
   };
-  // REFACTOR useEffects 👇
+
   useEffect(() => {
+    getAllMeals();
     getDay();
   }, []);
 
@@ -125,9 +127,6 @@ function DayCardPage() {
     daySubmit();
   }, [dayMeals]);
 
-  useEffect(() => {
-    getAllMeals();
-  }, []);
 
   useEffect(() => {
     setId(mealsData.length);
@@ -135,7 +134,7 @@ function DayCardPage() {
 
   return (
     <>
-      <ProgressBar dayCalories = {dayCalories}/>
+      <ProgressBar dayCalories={dayCalories} />
       <div className="complete-card">
         {" "}
         <h2>Day Card Page</h2>
@@ -183,24 +182,26 @@ function DayCardPage() {
             />
           );
         })}
-        { showForm ? (
-            <QuickMealForm // PROPS!!! O.O;
-              name={name} 
-              calories={calories} 
-              img={img} 
-              description={description} 
-              setName={setName} 
-              setCalories={setCalories} 
-              setImg={setImg} 
-              setDescription={setDescription} 
-              handleSubmit={handleSubmit} 
-              addQuickMeal={addQuickMeal}
-              />
-          ) : (
-            <div className="quick-meal-form">
-            <button className="btn" onClick={()=>console.log(setShowForm(!showForm))}>Add New Meal</button>
-            </div>
-          )
+        {showForm ? (
+          <QuickMealForm // PROPS!!! O.O;
+            name={name}
+            calories={calories}
+            img={img}
+            description={description}
+            setName={setName}
+            setCalories={setCalories}
+            setImg={setImg}
+            setDescription={setDescription}
+            handleSubmit={handleSubmit}
+            addQuickMeal={addQuickMeal}
+            setShowForm={setShowForm}
+            showForm={showForm}
+          />
+        ) : (
+          <div className="quick-meal-form">
+            <button className="btn" onClick={() => console.log(setShowForm(!showForm))}>Add New Meal</button>
+          </div>
+        )
         }
       </div>
     </>

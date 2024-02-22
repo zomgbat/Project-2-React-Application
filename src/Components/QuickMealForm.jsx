@@ -2,7 +2,7 @@ function QuickMealForm(props) {
     
     // const handleSubmit = props.handleSubmit;
     // const addQuickMeal = props.addQuickMeal;
-    const {name, calories, description, img, setName, setCalories, setDescription, setImg, handleSubmit, addQuickMeal} = props;
+    const {name, calories, description, img, setName, setCalories, setDescription, setImg, handleSubmit, addQuickMeal, setShowForm, showForm} = props;
 
     return(
         <form className="quick-meal-form" onSubmit={handleSubmit}>
