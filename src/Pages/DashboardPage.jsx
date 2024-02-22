@@ -18,8 +18,7 @@ function DashboardPage() {
         setDayMeals(response.data.meals)
       })
       .catch((error) => error)
-    })
-  }
+    }
   
   const navigate = useNavigate()
 
