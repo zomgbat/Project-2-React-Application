@@ -20,6 +20,9 @@ function DashboardPage() {
             setDayCalories(response.data.totalCalories)
           })
           .catch((error) => {
+
+            
+            // REFACTOR 👇 
             axios
               .post('http://localhost:5005/days', { id: date, meals: [], totalCalories: dayCalories })
               .then((response) => {
@@ -35,8 +38,6 @@ useEffect(() => {
     getDay();
 
 },[]) 
-
-
 
     return (
         <div >

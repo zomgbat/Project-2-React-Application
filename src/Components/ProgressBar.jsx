@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./ProgressBar.css";
+import "../styles/ProgressBar.css";
 
 function ProgressBar(props) {
-  const [dayCalories, setDayCalories] = useState(props.dayCalories);
+
   const [calorieTarget, setCalorieTarget] = useState(0);
   const [calorieProgress, setCalorieProgress] = useState(0);
 
@@ -14,9 +14,9 @@ function ProgressBar(props) {
         setCalorieTarget(response.data.caloriesGoal);
 
         updateProgressBar(Number(props.dayCalories));
-        //console.log(response.data.totalCalories);
+        
       })
-      //.then((response)=> console.log(response.data.caloriesGoal))
+      
       .catch((error) => error);
   }, [props.dayCalories]);
 
@@ -40,32 +40,6 @@ function ProgressBar(props) {
     console.log(calorieProgress, );
   };
 
-  /* Kumar - Uncomment this or the debug buttons won't work!
-
-  const handleDecrease = () => {
-    let updateCalories = dayCalories;
-    updateCalories -= 100;
-    if (updateCalories < 0) {
-      updateCalories = 0;
-    }
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  const handleIncrease = () => {
-    let updateCalories = dayCalories;
-    updateCalories += 100;
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  const handleReset = () => {
-    const updateCalories = 0;
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  */
 
   return (
     <div id="progress-bar-container">
