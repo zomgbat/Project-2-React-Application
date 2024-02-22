@@ -6,7 +6,7 @@ import MealListCard from "../Components/MealListCard.jsx";
 import ProgressBar from "../Components/ProgressBar.jsx";
 import QuickMealForm from "../Components/QuickMealForm.jsx";
 
-function DayCardPage() {
+function DayCardPage(props) {
   const [mealsData, setMealsData] = useState(""); // Meal database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
   const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
@@ -17,10 +17,9 @@ function DayCardPage() {
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
   const [dayCalories, setDayCalories] = useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
-
   const [showForm, setShowForm] = useState(false);
-
   const { date } = useParams();
+  const calorieTarget = props.calorieTarget;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -92,7 +91,7 @@ function DayCardPage() {
     setDayCalories(updateCalories);
 
     setName("");
-    setCalories("");
+    setCalories(""); 
     setDescription("");
     setImg("");
   };
@@ -134,7 +133,8 @@ function DayCardPage() {
 
   return (
     <>
-      <ProgressBar dayCalories={dayCalories} />
+
+      <ProgressBar dayCalories = {dayCalories} calorieTarget={calorieTarget}/>
       <div className="complete-card">
         {" "}
         <h2>Day Card Page</h2>
