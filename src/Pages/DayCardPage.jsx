@@ -7,6 +7,7 @@ import ProgressBar from "../Components/ProgressBar.jsx";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
+  // REFACTOR 👇 (is the variable used?)
   const [frequentMealsData, setFrequentMealsData] = useState(""); // Frequent meals database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
   const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
@@ -42,6 +43,7 @@ function DayCardPage() {
         setDayCalories(response.data.totalCalories);
       })
       .catch((error) => {
+        // REFACTOR 👇
         axios
           .post("http://localhost:5005/days", {
             id: date,
@@ -97,6 +99,7 @@ function DayCardPage() {
         totalCalories: dayCalories,
       })
       .then((response) => {
+        // REFACTOR 👇 (are we going to leave it empty or we want to navigate to another page, display a success message...)
         //console.log(response.data);
       })
       .catch((error) => error);
@@ -113,7 +116,7 @@ function DayCardPage() {
       )
       .catch((error) => error);
   };
-
+  // REFACTOR useEffects 👇
   useEffect(() => {
     getDay();
   }, []);
@@ -183,6 +186,7 @@ function DayCardPage() {
           );
         })}
         { showForm ? (
+            // REFACTOR 👇 (can the form be a component? )
             <form className="quick-meal-form" onSubmit={handleSubmit}>
               <label>Name:</label>
               <input
