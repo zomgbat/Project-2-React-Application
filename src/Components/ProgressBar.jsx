@@ -3,6 +3,7 @@ import axios from "axios";
 import "./ProgressBar.css";
 
 function ProgressBar(props) {
+  // REFACTOR 👇 (is this variable used?)
   const [dayCalories, setDayCalories] = useState(props.dayCalories);
   const [calorieTarget, setCalorieTarget] = useState(0);
   const [calorieProgress, setCalorieProgress] = useState(0);

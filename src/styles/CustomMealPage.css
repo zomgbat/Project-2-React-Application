@@ -29,7 +29,7 @@ label{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 80%;
-    max-width: 700px; /* Matches the form container width */
+    max-width: 700px; 
     margin: 40px;
     display: flex;
     flex-direction: column;

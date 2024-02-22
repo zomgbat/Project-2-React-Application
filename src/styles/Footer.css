@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;   /* :relative fixes the DayCardPage but affects the UI of others */
+    position: absolute;   
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,6 +21,7 @@
 }
 
 .nav:hover{
+    /* REFACTOR  */
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;
@@ -35,6 +36,7 @@
 }
 
 .home:hover{
+    /* REFACTOR  */
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;
