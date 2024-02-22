@@ -1,12 +1,12 @@
 #progress-bar-container {
     box-sizing: border-box;
-    border: 1px solid red;
+    border: 1px solid #5b5c38;
     width: 80%;
     margin: 10px auto 0px auto;
 }
 
 #progress-bar {
-    border: 1px solid red;
+    border: 1px solid #5b5c38;
     background-color: #e6e6e6;
     display: flex;
     justify-content: start;
@@ -15,8 +15,8 @@
 }
 
 #progress-bar-fill {
-    border: 1px solid red;
-    background-color: green;
+    border: 1px solid #5b5c38;
+    background-color: #5b5c38;
     width: 10%;
     height: 100%;
     font-size: 14px;
@@ -24,6 +24,6 @@
 }
 
 #progress-label{
-    border: 1px solid red;
+    border: 1px solid #5b5c38;
     font-size: 10px;
 }

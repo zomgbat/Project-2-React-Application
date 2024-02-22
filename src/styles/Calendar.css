@@ -3,11 +3,18 @@
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 5px;
-  height: 300px;
+  height: 400px;
+  margin: 20px;
+  max-width: 700px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  height: 330px;
   overflow-x: auto;
   padding: 10px;
   border: 1px solid #d0d0d0;
   background-color: #fff;
+  width: 460px;
 }
 
 .day {
@@ -17,6 +24,14 @@
   padding: 10px;
   background-color: #f0f0f0;
   border: 1px solid #d0d0d0;
+  text-decoration: none;
+  color: #5b5c38;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.day div {
+  background-color: transparent;
 }
 
 #month-bar {
@@ -30,18 +45,22 @@
 #month-bar button {
   width: 40px;
   height: 40px;
-  background-color: #6f8b72;
+  background-color: #5b5c38;
   border: none;
   color: #f0f0f0;
   border-radius: 50%;
 }
 
-.blank {
-  /* background-color: #fff; */
+.blank{
+  border-radius: 100%;
 }
 
 .weekday {
   height: 20px;
   background-color: transparent;
   text-align: center;
+}
+
+#tomato-indicator {
+  height: 150%
 }

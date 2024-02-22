@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./ProgressBar.css";
+import "../styles/ProgressBar.css";
 
 function ProgressBar(props) {
-  const [dayCalories, setDayCalories] = useState(props.dayCalories);
+
   const [calorieTarget, setCalorieTarget] = useState(0);
   const [calorieProgress, setCalorieProgress] = useState(0);
 
@@ -14,58 +14,30 @@ function ProgressBar(props) {
         setCalorieTarget(response.data.caloriesGoal);
 
         updateProgressBar(Number(props.dayCalories));
-        //console.log(response.data.totalCalories);
+        
       })
-      //.then((response)=> console.log(response.data.caloriesGoal))
+      
       .catch((error) => error);
   }, [props.dayCalories]);
 
   const getColor = () => {
     if (calorieProgress < 60) {
-      return "#00FF00";
+      return "#66734f";
     } else if (calorieProgress < 70) {
-      return "#FFFF00";
+      return "#a9b204";
     } else if (calorieProgress < 95) {
-      return "#FFAA00";
-    } else if (calorieProgress > 110) {
-      return "#AA0000"
+      return "#a9b204";
+    } else if (calorieProgress > 1600) {
+      return "#9a0d01"
     } else {
-      return "#FF0000";
+      return "#9a0d01";
     }
   };
 
   const updateProgressBar = (cal) => {
     cal === 0? setCalorieProgress(0) : setCalorieProgress((cal / calorieTarget) * 100);
-  
-    console.log(calorieProgress, );
   };
 
-  /* Kumar - Uncomment this or the debug buttons won't work!
-
-  const handleDecrease = () => {
-    let updateCalories = dayCalories;
-    updateCalories -= 100;
-    if (updateCalories < 0) {
-      updateCalories = 0;
-    }
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  const handleIncrease = () => {
-    let updateCalories = dayCalories;
-    updateCalories += 100;
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  const handleReset = () => {
-    const updateCalories = 0;
-    setDayCalories(updateCalories);
-    updateProgressBar(updateCalories);
-  };
-
-  */
 
   return (
     <div id="progress-bar-container">

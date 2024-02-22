@@ -1,4 +1,4 @@
-.userInfo{
+.userInfo {
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -6,42 +6,44 @@
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
-    color: #6f8b72;
+    color: #5b5c38;;
     gap: 10px;
     overflow-y: scroll;
     height: 70vh;
 }
 
-label{
+label {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     font-size: 20px;
 }
 
-h2 {
+.userNameH2 {
     display: flex;
     justify-content:center;
-    color: #6f8b72;
+    color: #5b5c38;;
     font-size: 30px;
     padding: 20px;
 }
 
-.calButton{
+.calButton {
+    width: 50px;
+    height: 50px;
     color: rgb(245, 237, 232);
-    background-color: #6f8b72;
+    background-color: #5b5c38;
     text-decoration: none;
     font-size: 15px;
     text-decoration: none;
-    border-radius: 5px;
-    padding: 1.5px;
+    border-radius: 40px; 
 }
 
-.calButton:hover{
+.calButton:hover {
+ /* refactor */
+    
     transition: 0.2s ease-in-out;
-    background-color: #bc1001; 
+    background-color: #bc1001;
     border-radius: 5px;
     cursor: pointer;
-    padding: 3px;
+    border-radius: 40px;  
 }
-

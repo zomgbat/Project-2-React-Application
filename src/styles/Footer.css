@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #6f8b72;
+    background-color: #5b5c38;
     padding: 20px;
     bottom: 0;
     width: 100%;
@@ -21,11 +21,12 @@
 }
 
 .nav:hover{
+    /* REFACTOR  */
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px;
+    
 }
 
 .home img{
@@ -35,9 +36,10 @@
 }
 
 .home:hover{
+    /* REFACTOR  */
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
     border-radius: 5px;
     cursor: pointer;
-    padding: 3px;
+    
 }

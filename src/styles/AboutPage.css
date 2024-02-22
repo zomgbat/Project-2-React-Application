@@ -8,7 +8,7 @@
     padding: 20px;
     margin: 15px;
     gap: 40px;
-    color: #6f8b72;
+    color: #5b5c38;
     overflow-y: scroll;
     height: 84vh;
 }
@@ -23,7 +23,7 @@
 h6{
   display: flex;
   justify-content:center;
-  color: #6f8b72;
+  color: #5b5c38;
   font-size: 15px;
 }
 .developer1-image {

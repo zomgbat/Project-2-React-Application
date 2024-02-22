@@ -4,10 +4,10 @@ import axios from "axios";
 import "../styles/DayCardPage.css";
 import MealListCard from "../Components/MealListCard.jsx";
 import ProgressBar from "../Components/ProgressBar.jsx";
+import QuickMealForm from "../Components/QuickMealForm.jsx";
 
-function DayCardPage() {
+function DayCardPage(props) {
   const [mealsData, setMealsData] = useState(""); // Meal database array
-  const [frequentMealsData, setFrequentMealsData] = useState(""); // Frequent meals database array
   const [mealSearchResults, setMealSearchResults] = useState([]); // Search results array
   const [dayMeals, setDayMeals] = useState([]); // Day meals array - Kumar: This is the array that needs to be pushed to the day's "meals" arraay
 
@@ -17,8 +17,9 @@ function DayCardPage() {
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
   const [dayCalories, setDayCalories] = useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
-
+  const [showForm, setShowForm] = useState(false);
   const { date } = useParams();
+  const calorieTarget = props.calorieTarget;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,6 +33,7 @@ function DayCardPage() {
     });
     setDayMeals(filterArray);
   };
+
   const getDay = () => {
     axios
       .get(`http://localhost:5005/days/${date}`)
@@ -39,19 +41,26 @@ function DayCardPage() {
         setDayMeals(response.data.meals);
         setDayCalories(response.data.totalCalories);
       })
+      .catch((error) => error)
+  };
+
+  const postNewMeals = () => {
+
+    axios
+      .post("http://localhost:5005/days", {
+        id: date,
+        meals: dayMeals,
+        totalCalories: dayCalories,
+      })
+      .then((response) => {
+        setDayMeals(response.data.meals);
+      })
       .catch((error) => {
-        axios
-          .post("http://localhost:5005/days", {
-            id: date,
-            meals: dayMeals,
-            totalCalories: dayCalories,
-          })
-          .then((response) => {
-            setDayMeals(response.data.meals);
-          })
-          .catch((error) => error);
+        postNewMeals()
       });
   };
+
+
 
   const addQuickMeal = (meal) => {
     if (name === "") {
@@ -69,13 +78,12 @@ function DayCardPage() {
     }
 
     if (description === "") {
-      meal.description ="Just something I found lying around";
+      meal.description = "Just something I found lying around";
     }
     addNew(meal);
-
   }
+
   const addNew = (meal) => {
-    
 
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
@@ -83,7 +91,7 @@ function DayCardPage() {
     setDayCalories(updateCalories);
 
     setName("");
-    setCalories(""); // Reset to an empty string to match the initial state
+    setCalories(""); 
     setDescription("");
     setImg("");
   };
@@ -93,9 +101,6 @@ function DayCardPage() {
       .patch(`http://localhost:5005/days/${date}`, {
         meals: dayMeals,
         totalCalories: dayCalories,
-      })
-      .then((response) => {
-        //console.log(response.data);
       })
       .catch((error) => error);
   };
@@ -113,6 +118,7 @@ function DayCardPage() {
   };
 
   useEffect(() => {
+    getAllMeals();
     getDay();
   }, []);
 
@@ -120,9 +126,6 @@ function DayCardPage() {
     daySubmit();
   }, [dayMeals]);
 
-  useEffect(() => {
-    getAllMeals();
-  }, []);
 
   useEffect(() => {
     setId(mealsData.length);
@@ -130,13 +133,13 @@ function DayCardPage() {
 
   return (
     <>
-      <ProgressBar dayCalories = {dayCalories}/>
-      <div className="completeCard">
+
+      <ProgressBar dayCalories = {dayCalories} calorieTarget={calorieTarget}/>
+      <div className="complete-card">
         {" "}
-        {/*Kumar - this should be kebab-case*/}
         <h2>Day Card Page</h2>
-        <p className="todayMeal">Today you ate:</p>{" "}
-        <p className="todayMeal">{`${dayCalories} calories`}</p>
+        <h6>Today you ate:</h6>{" "}
+        <p className="today-meal">{`${dayCalories} calories`}</p>
         <div id="meal-card-container">
           {dayMeals.map((meal, index) => {
             return (
@@ -149,10 +152,9 @@ function DayCardPage() {
             );
           })}
         </div>
-        <p className="searchMeal">Search here your meal:</p>{" "}
-        {/*Kumar - this should be kebab-case*/}
+        <p className="search-meal">Search meals:</p>{" "}
         <input
-          className="searchBar"
+          className="search-bar"
           type="text"
           onChange={(event) => {
             if (event.target.value.length === 0) {
@@ -170,7 +172,7 @@ function DayCardPage() {
         {mealSearchResults.map((meal) => {
           return (
             <img
-              className="searchImg"
+              className="search-img"
               onClick={() => {
                 addNew(meal);
               }}
@@ -180,42 +182,27 @@ function DayCardPage() {
             />
           );
         })}
-        <form className="quick-meal-form" onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+        {showForm ? (
+          <QuickMealForm // PROPS!!! O.O;
+            name={name}
+            calories={calories}
+            img={img}
+            description={description}
+            setName={setName}
+            setCalories={setCalories}
+            setImg={setImg}
+            setDescription={setDescription}
+            handleSubmit={handleSubmit}
+            addQuickMeal={addQuickMeal}
+            setShowForm={setShowForm}
+            showForm={showForm}
           />
-          <label>Calories:</label>
-          <input
-            type="number"
-            value={calories}
-            onChange={(e) => setCalories(Number(e.target.value))}
-          />
-          <label>Description:</label>
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label>Img:</label>
-          <input
-            type="text"
-            value={img}
-            onChange={(e) => setImg(e.target.value)}
-          />
-          <button
-            className="btn"
-            type="submit"
-            onClick={() => {
-              addQuickMeal({ name, calories, description, img });
-            }}
-          >
-            {" "}
-            Add quick meal
-          </button>
-        </form>
+        ) : (
+          <div className="quick-meal-form">
+            <button className="btn" onClick={() => console.log(setShowForm(!showForm))}>Add New Meal</button>
+          </div>
+        )
+        }
       </div>
     </>
   );
