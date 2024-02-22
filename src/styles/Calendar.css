@@ -14,6 +14,7 @@
   padding: 10px;
   border: 1px solid #d0d0d0;
   background-color: #fff;
+  width: 460px;
 }
 
 .day {
@@ -24,7 +25,7 @@
   background-color: #f0f0f0;
   border: 1px solid #d0d0d0;
   text-decoration: none;
-  color: #6f8b72;
+  color: #5b5c38;
   height: 50px;
   border-radius: 100%;
 }
@@ -44,7 +45,7 @@
 #month-bar button {
   width: 40px;
   height: 40px;
-  background-color: #6f8b72;
+  background-color: #5b5c38;
   border: none;
   color: #f0f0f0;
   border-radius: 50%;

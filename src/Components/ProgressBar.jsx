@@ -22,15 +22,15 @@ function ProgressBar(props) {
 
   const getColor = () => {
     if (calorieProgress < 60) {
-      return "#00FF00";
+      return "#66734f";
     } else if (calorieProgress < 70) {
-      return "#FFFF00";
+      return "#a9b204";
     } else if (calorieProgress < 95) {
-      return "#FFAA00";
-    } else if (calorieProgress > 110) {
-      return "#AA0000"
+      return "#a9b204";
+    } else if (calorieProgress > 1600) {
+      return "#9a0d01"
     } else {
-      return "#FF0000";
+      return "#9a0d01";
     }
   };
 

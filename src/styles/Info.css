@@ -1,15 +1,16 @@
 .infoPageContainer {
-  max-width: 750px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  overflow-y: scroll;
-  color: #6f8b72;
-  padding: 0px 50px;
-  gap: 10px;
-  height: 84vh;
-}
+    max-width: 750px; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    overflow-y: scroll;
+    color: #5b5c38;
+    padding: 0px 50px;
+    gap: 10px;
+    height: 84vh;
+  }
 
 .infoButton {
   display: inline-block;
