@@ -6,7 +6,7 @@ import MealListCard from "../Components/MealListCard.jsx";
 import ProgressBar from "../Components/ProgressBar.jsx";
 import QuickMealForm from "../Components/QuickMealForm.jsx";
 
-function DayCardPage() {
+function DayCardPage(props) {
   const [mealsData, setMealsData] = useState(""); // Meal database array
   // REFACTOR 👇 (is the variable used?)
   const [frequentMealsData, setFrequentMealsData] = useState(""); // Frequent meals database array
@@ -19,10 +19,9 @@ function DayCardPage() {
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
   const [dayCalories, setDayCalories] = useState(0); // Kumar: This is the totalCalories that needs to be pushed to the day's totalCalories
-
   const [showForm, setShowForm] = useState(false);
-
   const { date } = useParams();
+  const calorieTarget = props.calorieTarget;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,6 +35,7 @@ function DayCardPage() {
     });
     setDayMeals(filterArray);
   };
+
   const getDay = () => {
     axios
       .get(`http://localhost:5005/days/${date}`)
@@ -87,7 +87,7 @@ function DayCardPage() {
     setDayCalories(updateCalories);
 
     setName("");
-    setCalories(""); // Reset to an empty string to match the initial state
+    setCalories(""); 
     setDescription("");
     setImg("");
   };
@@ -135,7 +135,7 @@ function DayCardPage() {
 
   return (
     <>
-      <ProgressBar dayCalories = {dayCalories}/>
+      <ProgressBar dayCalories = {dayCalories} calorieTarget={calorieTarget}/>
       <div className="complete-card">
         {" "}
         <h2>Day Card Page</h2>

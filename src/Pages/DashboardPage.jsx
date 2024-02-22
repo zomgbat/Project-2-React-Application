@@ -6,43 +6,57 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function DashboardPage() {
-    
-    const today = new Date();
-    const date = today.getFullYear()+'-'+(today.getMonth()+1).toString().padStart(2, '0')+'-'+today.getDate().toString().padStart(2, '0');
-    console.log(date);
-    const [dayCalories, setDayCalories] = useState(0);
+  const [calorieTarget, setCalorieTarget] = useState(0);
 
-    const getDay = () => {
-        axios
-          .get(`http://localhost:5005/days/${date}`)
-          .then((response) => {
-            console.log(response.data.totalCalories);
-            setDayCalories(response.data.totalCalories)
-          })
-          .catch((error) => {
-
-            
-            // REFACTOR 👇 
-            axios
-              .post('http://localhost:5005/days', { id: date, meals: [], totalCalories: dayCalories })
-              .then((response) => {
-                setDayMeals(response.data.meals)
-              })
-              .catch((error) => error)
-          })
-      }
-
-    const navigate = useNavigate()
-
-useEffect(() => {
+  
+  const today = new Date();
+  const date = today.getFullYear()+'-'+(today.getMonth()+1).toString().padStart(2, '0')+'-'+today.getDate().toString().padStart(2, '0');
+  
+  const [dayCalories, setDayCalories] = useState(0);
+  
+  const getDay = () => {
+    axios
+    .get(`http://localhost:5005/days/${date}`)
+    .then((response) => {
+      setDayCalories(response.data.totalCalories)
+    })
+    .catch((error) => {
+      
+      
+      // REFACTOR 👇 
+      axios
+      .post('http://localhost:5005/days', { id: date, meals: [], totalCalories: dayCalories })
+      .then((response) => {
+        setDayMeals(response.data.meals)
+      })
+      .catch((error) => error)
+    })
+  }
+  
+  const navigate = useNavigate()
+  
+  useEffect(() => {
     getDay();
+    
+  },[]) 
 
-},[]) 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5005/user")
+      .then((response) => {
+        setCalorieTarget(response.data.caloriesGoal);
 
-    return (
-        <div >
-            <ProgressBar dayCalories = {dayCalories}/>
-            <Calendar />
+        updateProgressBar(Number(props.dayCalories));
+        
+      })
+      
+      .catch((error) => error);
+  }, [dayCalories]);
+  
+  return (
+    <div >
+            <ProgressBar calorieTarget = {calorieTarget} dayCalories = {dayCalories}/>
+            <Calendar calorieTarget = {calorieTarget} dayCalories = {dayCalories}/>
         </div>
 
     )

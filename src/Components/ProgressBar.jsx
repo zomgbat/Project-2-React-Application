@@ -36,8 +36,6 @@ function ProgressBar(props) {
 
   const updateProgressBar = (cal) => {
     cal === 0? setCalorieProgress(0) : setCalorieProgress((cal / calorieTarget) * 100);
-  
-    console.log(calorieProgress, );
   };
 
 
