@@ -1,30 +1,18 @@
 import '../styles/DashboardPage.css'
 import { useNavigate } from 'react-router-dom';
 import ProgressBar from '../Components/ProgressBar.jsx';
-import Calendar from '../Components/Calendar'; 
+import Calendar from '../Components/Calendar';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function DashboardPage() {
   const [calorieTarget, setCalorieTarget] = useState(0);
-
-  
+  const [dayCalories, setDayCalories] = useState(0);
   const today = new Date();
   const date = today.getFullYear()+'-'+(today.getMonth()+1).toString().padStart(2, '0')+'-'+today.getDate().toString().padStart(2, '0');
-  
-  const [dayCalories, setDayCalories] = useState(0);
-  
-  const getDay = () => {
+ 
+  const createNewDay = () => {
     axios
-    .get(`http://localhost:5005/days/${date}`)
-    .then((response) => {
-      setDayCalories(response.data.totalCalories)
-    })
-    .catch((error) => {
-      
-      
-      // REFACTOR 👇 
-      axios
       .post('http://localhost:5005/days', { id: date, meals: [], totalCalories: dayCalories })
       .then((response) => {
         setDayMeals(response.data.meals)
@@ -34,10 +22,21 @@ function DashboardPage() {
   }
   
   const navigate = useNavigate()
-  
+
+  const getDay = () => {
+    axios
+      .get(`http://localhost:5005/days/${date}`)
+      .then((response) => {
+        console.log(response.data.totalCalories);
+        setDayCalories(response.data.totalCalories)
+      })
+      .catch((error) => {
+        createNewDay()
+      })
+  }
+
   useEffect(() => {
     getDay();
-    
   },[]) 
 
   useEffect(() => {
@@ -58,8 +57,7 @@ function DashboardPage() {
             <ProgressBar calorieTarget = {calorieTarget} dayCalories = {dayCalories}/>
             <Calendar calorieTarget = {calorieTarget} dayCalories = {dayCalories}/>
         </div>
-
-    )
+  )
 }
 
 export default DashboardPage;

@@ -38,7 +38,7 @@ header {
 .user:hover{
     transition: 0.2s ease-in-out;
     background-color: #bc1001; 
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
-    padding: 3px;
+    
 }
