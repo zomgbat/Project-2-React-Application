@@ -1,5 +1,5 @@
 .todayMeal{ /*Used to be todayMeat*/
-    color: #6f8b72;
+    color: #5b5c38;
     text-decoration: none;
     font-size: 20px;
     background-color: transparent;
@@ -7,7 +7,7 @@
 }
 
 .searchMeal{ /*Used to be searchMeat*/
-    color: #6f8b72;
+    color: #5b5c38;
     text-decoration: none;
     font-size: 20px;
     background-color: transparent;
@@ -17,7 +17,7 @@
 h5{
     display: flex;
     justify-content: center;
-    color: #6f8b72;
+    color: #5b5c38;
     font-size: 23px;
     background-color: transparent;
     padding: 10px;
@@ -31,7 +31,7 @@ h5{
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
-    color: #6f8b72;
+    color:#5b5c38;
     gap: 10px;
 }
 
@@ -40,7 +40,7 @@ h5{
     flex-direction: column;
     align-items:center;
     justify-content:center;
-    color: #6f8b72;
+    color: #5b5c38;
     font-size: 20px;
     background-color: transparent;
     padding: 10px;
@@ -54,7 +54,7 @@ h5{
     justify-content:center;
     color: rgb(245, 237, 232);
     font-size: 20px;
-    background-color: #6f8b72;
+    background-color: #5b5c38;
     opacity: 60%;
     padding: 10px;
     margin: 20px 0px; 

@@ -6,7 +6,7 @@
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
-    color: #6f8b72;
+    color: #5b5c38;
     gap: 10px;
     overflow-y: scroll;
     height: 70vh;
@@ -22,14 +22,14 @@ label{
 h2 {
     display: flex;
     justify-content:center;
-    color: #6f8b72;
+    color: #5b5c38;
     font-size: 30px;
     padding: 20px;
 }
 
 .calButton{
     color: rgb(245, 237, 232);
-    background-color: #6f8b72;
+    background-color: #5b5c38;
     text-decoration: none;
     font-size: 15px;
     text-decoration: none;
