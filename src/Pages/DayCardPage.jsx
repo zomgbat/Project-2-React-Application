@@ -138,7 +138,7 @@ function DayCardPage(props) {
       <div className="complete-card">
         {" "}
         <h2>Day Card Page</h2>
-        <p className="today-meal">Today you ate:</p>{" "}
+        <h6>Today you ate:</h6>{" "}
         <p className="today-meal">{`${dayCalories} calories`}</p>
         <div id="meal-card-container">
           {dayMeals.map((meal, index) => {

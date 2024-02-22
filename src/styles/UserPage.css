@@ -6,7 +6,7 @@
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
-    color: #6f8b72;
+    color: #5b5c38;;
     gap: 10px;
     overflow-y: scroll;
     height: 70vh;
@@ -22,7 +22,7 @@ label {
 .userNameH2 {
     display: flex;
     justify-content:center;
-    color: #6f8b72;
+    color: #5b5c38;;
     font-size: 30px;
     padding: 20px;
 }
@@ -45,7 +45,5 @@ label {
     background-color: #bc1001;
     border-radius: 5px;
     cursor: pointer;
-    border-radius: 40px; 
-    
-    
+    border-radius: 40px;  
 }
