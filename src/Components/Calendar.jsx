@@ -52,6 +52,8 @@ function Calendar() {
         ))}
 
         {days.map(day => (
+          <Link className="day" key={day} to={`/day/${year}-${String(month+1).padStart(2, '0')}-${String(day).padStart(2,'0')}`}>
+            <div>{day}</div>
           // REFACTOR 👇 (can we use a function to add the url?)
           <Link key={day} to={`/day/${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`}>
             <div className="day">{day}</div>
