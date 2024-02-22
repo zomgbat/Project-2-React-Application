@@ -1,11 +1,10 @@
 
 .infoPageContainer {
-    max-width: 750px; /* Maximum width */
-    padding: 20px; /* Add some padding inside the container */
-    display: flex;/* Using flexbox to arrange child elements */
+    max-width: 750px; 
+    padding: 20px; 
+    display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; /* Allow items to wrap if not enough space */ 
-    justify-content: space-between; /* Space out items */
+    justify-content: space-between; 
     align-items: center;
     overflow-y: scroll;
     color: #5b5c38;
@@ -28,11 +27,11 @@
   
   .infoButton:hover {
     transition: 0.2s ease-in-out;
-    background-color: #9a0d01; /* A slightly darker blue */
+    background-color: #9a0d01; 
   }
   
   .infoImage {
-    max-width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto; 
   }
   

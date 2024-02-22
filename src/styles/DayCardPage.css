@@ -1,13 +1,10 @@
-.todayMeal{ /*Used to be todayMeat*/
+
+.searchMeal{
     color: #5b5c38;
-    text-decoration: none;
-    font-size: 20px;
-    background-color: transparent;
-    padding: 20px;
 }
 
-.searchMeal{ /*Used to be searchMeat*/
-    color: #5b5c38;
+.search-meal{ 
+    color: #6f8b72;
     text-decoration: none;
     font-size: 20px;
     background-color: transparent;
@@ -35,7 +32,7 @@ h5{
     gap: 10px;
 }
 
-.searchBar{
+.search-bar{
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -68,11 +65,11 @@ h5{
     flex-wrap: wrap;
 }
 
-.searchImg{
+.search-img{
     width: 40px;
 }
 
-.completeCard{
+.complete-card{
       overflow-y: scroll;
       height: 80vh;
 }

@@ -6,6 +6,7 @@ function Calendar() {
   const [today, setToday] = useState(new Date());
   const [month, setMonth] = useState(today.getMonth())
   const [year, setYear] = useState(today.getFullYear());
+  // REFACTOR 👇 (is this variable used?)
   const [date, setDate] = useState(today.getDate());
   const [monthDays, setMonthDays] = useState(new Date(year, month, 0).getDate());
   const [firstDay, setFirstDay] = useState(new Date(year, month, 0).getDay())
@@ -53,6 +54,9 @@ function Calendar() {
         {days.map(day => (
           <Link className="day" key={day} to={`/day/${year}-${String(month+1).padStart(2, '0')}-${String(day).padStart(2,'0')}`}>
             <div>{day}</div>
+          // REFACTOR 👇 (can we use a function to add the url?)
+          <Link key={day} to={`/day/${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`}>
+            <div className="day">{day}</div>
           </Link>
         ))}
       </div>

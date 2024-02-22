@@ -29,24 +29,24 @@ h6{
 .developer1-image {
     max-width: 200px;
     max-height: 200px;
-    border-radius: 200px; /* Adds rounded corners to the image */
-    margin: auto; /* Centers the image horizontally in the flex container */
-    display: block; /* Ensures the margin auto is effective */
+    border-radius: 200px; 
+    margin: auto;
+    display: block; 
 }
 
   .developer2-image {
     max-width: 200px;
     max-height: 200px;
-    border-radius: 200px; /* Adds rounded corners to the image */
-    margin: auto; /* Centers the image horizontally in the flex container */
-    display: block; /* Ensures the margin auto is effective */
+    border-radius: 200px; 
+    margin: auto; 
+    display: block; 
   }
   .developer3-image {
     max-width: 200px;
     max-height: 200px;
-    border-radius: 200px; /* Adds rounded corners to the image */
-    margin: auto; /* Centers the image horizontally in the flex container */
-    display: block; /* Ensures the margin auto is effective */
+    border-radius: 200px; 
+    margin: auto; 
+    display: block; 
   }
 
   
