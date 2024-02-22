@@ -34,6 +34,16 @@
   background-color: transparent;
 }
 
+.day-link {
+  position: absolute;
+  background: transparent;
+}
+.day-link-highlight {
+  position: absolute;
+  background: transparent;
+  color: #ffffff;
+}
+
 #month-bar {
   display: flex;
   justify-content: space-between;
@@ -62,5 +72,5 @@
 }
 
 #tomato-indicator {
-  height: 150%
+  width: 100%
 }

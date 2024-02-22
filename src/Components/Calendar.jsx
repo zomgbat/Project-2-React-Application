@@ -91,23 +91,29 @@ function Calendar(props) {
         {days.map((day) => (
           <Link key={day} to={`/day/${formatDate(day)}`}>
             <div className="day">
-              {checkCalorieData(formatDate(day)) && (
-                calorieTargetMet? (
+              {checkCalorieData(formatDate(day)) &&
+                (calorieTargetMet ? (
                   <img
                     id="tomato-indicator"
                     src="src/assets/tomatogreen.png"
                     alt="tomato"
                   />
-                  
-                ):(
+                ) : (
                   <img
                     id="tomato-indicator"
                     src="src/assets/tomatored.png"
                     alt="tomato"
                   />
-                )
-              )}
-              {day}
+                ))}
+              <p
+                className={
+                  checkCalorieData(formatDate(day))
+                    ? "day-link-highlight"
+                    : "day-link"
+                }
+              >
+                {day}
+              </p>
             </div>
           </Link>
         ))}
