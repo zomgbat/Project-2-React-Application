@@ -4,6 +4,7 @@ import axios from "axios";
 import "../styles/DayCardPage.css";
 import MealListCard from "../Components/MealListCard.jsx";
 import ProgressBar from "../Components/ProgressBar.jsx";
+import QuickMealForm from "../Components/QuickMealForm.jsx";
 
 function DayCardPage() {
   const [mealsData, setMealsData] = useState(""); // Meal database array
@@ -73,14 +74,13 @@ function DayCardPage() {
     }
 
     if (description === "") {
-      meal.description ="Just something I found lying around";
+      meal.description = "Just something I found lying around";
     }
     addNew(meal);
-
   }
+
   const addNew = (meal) => {
     
-
     setDayMeals([...dayMeals, meal]);
     setId(id + 1); // Kumar - Do we need this here?
     const updateCalories = dayCalories + meal.calories;
@@ -138,7 +138,6 @@ function DayCardPage() {
       <ProgressBar dayCalories = {dayCalories}/>
       <div className="complete-card">
         {" "}
-        {/*Kumar - this should be kebab-case*/}
         <h2>Day Card Page</h2>
         <p className="today-meal">Today you ate:</p>{" "}
         <p className="today-meal">{`${dayCalories} calories`}</p>
@@ -155,7 +154,6 @@ function DayCardPage() {
           })}
         </div>
         <p className="search-meal">Search meals:</p>{" "}
-        {/*Kumar - this should be kebab-case*/}
         <input
           className="search-bar"
           type="text"
@@ -186,44 +184,18 @@ function DayCardPage() {
           );
         })}
         { showForm ? (
-            // REFACTOR 👇 (can the form be a component? )
-            <form className="quick-meal-form" onSubmit={handleSubmit}>
-              <label>Name:</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+            <QuickMealForm // PROPS!!! O.O;
+              name={name} 
+              calories={calories} 
+              img={img} 
+              description={description} 
+              setName={setName} 
+              setCalories={setCalories} 
+              setImg={setImg} 
+              setDescription={setDescription} 
+              handleSubmit={handleSubmit} 
+              addQuickMeal={addQuickMeal}
               />
-              <label>Calories:</label>
-              <input
-                type="number"
-                value={calories}
-                onChange={(e) => setCalories(Number(e.target.value))}
-              />
-              <label>Description:</label>
-              <input
-                type="text"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-              <label>Photo URL:</label>
-              <input
-                type="text"
-                value={img}
-                onChange={(e) => setImg(e.target.value)}
-              />
-              <button
-                className="btn"
-                type="submit"
-                onClick={() => {
-                  addQuickMeal({ name, calories, description, img });
-                }}
-              >
-                Add quick meal
-              </button>
-            <button className="btn" onClick={()=>console.log(setShowForm(!showForm))}>Close Form</button>
-            </form>
-
           ) : (
             <div className="quick-meal-form">
             <button className="btn" onClick={()=>console.log(setShowForm(!showForm))}>Add New Meal</button>
