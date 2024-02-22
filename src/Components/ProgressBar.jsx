@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./ProgressBar.css";
+import "../styles/ProgressBar.css";
 
 function ProgressBar(props) {
   // REFACTOR 👇 (is this variable used?)
