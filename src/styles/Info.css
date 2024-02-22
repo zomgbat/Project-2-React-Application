@@ -1,37 +1,46 @@
-
 .infoPageContainer {
-    max-width: 750px; 
-    padding: 20px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    overflow-y: scroll;
-    color: #6f8b72;
-    padding: 0px 50px;
-    gap: 10px;
-    height: 84vh;
-  }
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  color: #6f8b72;
+  padding: 0px 50px;
+  gap: 10px;
+  height: 84vh;
+}
 
-  .infoButton {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: rgb(245, 237, 232);
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .infoButton:hover {
-    transition: 0.2s ease-in-out;
-    background-color: #9a0d01; 
-  }
-  
-  .infoImage {
-    max-width: 100%;
-    height: auto; 
-  }
-  
+.infoButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: rgb(245, 237, 232);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.infoButton:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #9a0d01;
+}
+
+.infoImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.infopara1 {
+  padding: 10px;
+}
+
+.infopara2 {
+  padding: 10px;
+}
+
+.infopara3 {
+  padding: 10px;
+}
