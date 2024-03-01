@@ -1,0 +1,39 @@
+.SignUpFormContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 700px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    color: #5b5c38;
+    gap: 20px;
+}
+
+.SignUpTitle {
+    font-weight: bold;
+}
+
+
+label{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-size: 12px;
+}
+
+
+.SignUpButtonDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* from React Project - may need later
+.customContainer{
+    overflow-y: scroll;
+    height: 84vh;
+}
