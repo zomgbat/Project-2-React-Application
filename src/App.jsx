@@ -11,7 +11,8 @@ import Header from './Components/Header'
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Info from './Pages/Info'
-
+import SignUpPage from './Pages/SignUpPage'
+import LogInPage from './Pages/LogInPage'
 
 function App() {
 
@@ -53,6 +54,13 @@ function App() {
         <Route path='/custom-meal' element={<CustomMealPage />} />
         <Route path='/user' element={<UserPage />} />
         <Route path='/info' element={<Info />} />
+
+
+
+      <Route path='/sign-up' element={<SignUpPage/>} />
+      <Route path='/log-in' element={<LogInPage/>} />
+
+
       </Routes>
       <Footer />
     </>
